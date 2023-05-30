@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Carbyn
+	email = carbyn@live.com
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+    br = branch
+[pull]
+	rebase = false
