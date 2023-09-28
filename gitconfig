@@ -9,3 +9,5 @@
     br = branch
 [pull]
 	rebase = false
+[core]
+	quotepath = false
