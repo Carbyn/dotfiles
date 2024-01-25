@@ -1,17 +1,18 @@
--- local autocmd = vim.api.nvim_create_autocmd
+local opt = vim.opt
 
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 
-vim.opt.listchars = "trail:"
-vim.opt.list = true
+opt.listchars = "trail:"
+opt.list = true
 
-vim.opt.foldmethod = "indent"
-vim.opt.foldlevel = 1
-vim.opt.foldlevelstart = 99
+opt.ignorecase = false
+opt.mouse = ""
+
+opt.foldmethod = "indent"
+opt.foldlevel = 1
+opt.foldlevelstart = 99
 
 vim.cmd [[
   augroup remember_folds
@@ -21,7 +22,6 @@ vim.cmd [[
   augroup END
 ]]
 
-vim.cmd [[ 
-  autocmd BufWritePre * :%s/\s\+$//e 
+vim.cmd [[
+  autocmd BufWritePre * :%s/\s\+$//e
 ]]
-
