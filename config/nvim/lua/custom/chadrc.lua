@@ -6,7 +6,6 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "onedark",
-  theme_toggle = { "onedark", "onedark" },
   transparency = true,
 
   hl_override = highlights.override,
@@ -18,6 +17,11 @@ M.ui = {
         ["@constant"] = { fg = "#fda65f" },
       },
     },
+  },
+
+  -- lazyload it when there are 1+ buffers
+  tabufline = {
+    show_numbers = true,
   },
 
   -- nvdash (dashboard)
