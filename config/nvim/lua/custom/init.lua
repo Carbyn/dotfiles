@@ -1,4 +1,9 @@
 local opt = vim.opt
+local g = vim.g
+
+g.toggle_theme_icon = ""
+
+opt.clipboard = ""
 
 opt.tabstop = 4
 opt.softtabstop = 4
