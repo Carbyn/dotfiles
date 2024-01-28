@@ -21,7 +21,10 @@ M.ui = {
 
   -- lazyload it when there are 1+ buffers
   tabufline = {
-    show_numbers = true,
+    overriden_modules = function(modules)
+      -- remove buttons at right-top cornor
+      table.remove(modules)
+    end
   },
 
   -- nvdash (dashboard)
