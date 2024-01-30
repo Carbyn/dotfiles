@@ -20,10 +20,20 @@ opt.foldlevel = 1
 opt.foldlevelstart = 99
 
 vim.cmd [[
-  augroup remember_folds
+  augroup RememberFolds
     autocmd!
     autocmd BufWinLeave ?* mkview
     autocmd BufWinEnter * silent! loadview
+  augroup END
+]]
+
+
+vim.cmd [[
+  augroup FileTypeSpecificTabs
+    autocmd!
+    autocmd FileType lua,vim,json,html,javascript,css set tabstop=2
+    autocmd FileType lua,vim,json,html,javascript,css set softtabstop=2
+    autocmd FileType lua,vim,json,html,javascript,css set shiftwidth=2
   augroup END
 ]]
 
