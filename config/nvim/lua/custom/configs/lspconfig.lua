@@ -12,14 +12,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
-lspconfig.pyright.setup {
-  settings = {
-    python = {
-      analysis = {
-        diagnosticMode = "off",
-        typeCheckingMode = "off",
-      },
-    },
-  },
-}
