@@ -19,6 +19,7 @@ opt.foldmethod = "indent"
 opt.foldlevel = 1
 opt.foldlevelstart = 99
 
+
 vim.cmd [[
   augroup RememberFolds
     autocmd!
@@ -36,6 +37,7 @@ vim.cmd [[
     autocmd FileType lua,vim,json,html,javascript,css set shiftwidth=2
   augroup END
 ]]
+
 
 vim.cmd [[
   autocmd BufWritePre * :%s/\s\+$//e

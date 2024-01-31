@@ -11,7 +11,15 @@ M.general = {
         require("conform").format()
       end,
       "formatting",
-    }
+    },
+
+    -- show current time
+    ["<leader>tt"] = {
+      function()
+        print(vim.fn.strftime("%Y-%m-%d %H:%M"))
+      end,
+      "Show current time",
+    },
 
   },
   v = {
