@@ -19,6 +19,10 @@ M.ui = {
   tabufline = {
     order = { "treeOffset", "buffers", "tabs" },
   },
+
+  nvdash = {
+      load_on_startup = true,
+  }
 }
 
 return M
