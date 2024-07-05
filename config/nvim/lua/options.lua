@@ -1,12 +1,15 @@
 require("nvchad.options")
 
 local g = vim.g
+local o = vim.o
 local opt = vim.opt
 
 g.toggle_theme_icon = ""
 
+o.cursorline = true
+o.cursorlineopt = "both"
+
 opt.clipboard = ""
-opt.cursorline = true
 
 opt.foldmethod = "indent"
 opt.foldlevel = 1
