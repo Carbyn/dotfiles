@@ -8,14 +8,6 @@ M.ui = {
   theme = "onedark",
   transparency = true,
 
-  changed_themes = {
-    onedark = {
-      base_16 = {
-        base08 = "#fda65f",
-      },
-    },
-  },
-
   tabufline = {
     order = { "treeOffset", "buffers", "tabs" },
   },
