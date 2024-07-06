@@ -9,5 +9,7 @@
     br = branch
 [pull]
 	rebase = false
+[safe]
+	directory = /opt/homebrew
 [core]
 	quotepath = false
