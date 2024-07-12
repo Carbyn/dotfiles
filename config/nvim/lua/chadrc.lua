@@ -8,6 +8,8 @@ M.ui = {
 	theme = "onedark",
 	transparency = true,
 
+	telescope = { style = "bordered" },
+
 	tabufline = {
 		order = { "treeOffset", "buffers", "tabs" },
 	},
