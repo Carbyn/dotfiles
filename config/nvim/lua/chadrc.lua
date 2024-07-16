@@ -8,6 +8,10 @@ M.ui = {
 	theme = "onedark",
 	transparency = true,
 
+	hl_override = {
+		CursorLine = { bg = "statusline_bg" },
+	},
+
 	telescope = { style = "bordered" },
 
 	tabufline = {
