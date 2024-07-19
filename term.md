@@ -1,9 +1,12 @@
 # Term
 ## brew
+## font-code-new-roman-nerd-font
+## oh-my-zsh
 ## git
 ## autojump
-## bat
-## oh-my-zsh
-## font-code-new-roman-nerd-font
+## zsh-autosuggestions
+## zsh-syntax-highlighting
 ## p10k
+## bat
 ## neovim + NvChad
+## pip vmd
