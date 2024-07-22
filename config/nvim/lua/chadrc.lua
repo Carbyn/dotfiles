@@ -12,14 +12,8 @@ M.ui = {
 		CursorLine = { bg = "statusline_bg" },
 	},
 
-	telescope = { style = "bordered" },
-
 	tabufline = {
 		order = { "treeOffset", "buffers", "tabs" },
-	},
-
-	nvdash = {
-		load_on_startup = true,
 	},
 }
 
