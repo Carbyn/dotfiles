@@ -12,6 +12,16 @@ M.ui = {
 		CursorLine = { bg = "statusline_bg" },
 	},
 
+	changed_themes = {
+		onedark = {
+			base_16 = {
+				base00 = "#111111",
+				base0E = "#A770EF",
+				base0F = "#9796f0",
+			},
+		},
+	},
+
 	tabufline = {
 		order = { "treeOffset", "buffers", "tabs" },
 	},
