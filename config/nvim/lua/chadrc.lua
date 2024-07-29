@@ -4,24 +4,16 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
 	theme = "onedark",
 	transparency = true,
 
 	hl_override = {
 		CursorLine = { bg = "statusline_bg" },
 	},
+}
 
-	changed_themes = {
-		onedark = {
-			base_16 = {
-				base00 = "#111111",
-				base0E = "#A770EF",
-				base0F = "#9796f0",
-			},
-		},
-	},
-
+M.ui = {
 	tabufline = {
 		order = { "treeOffset", "buffers", "tabs" },
 	},
