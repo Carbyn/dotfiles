@@ -7,10 +7,6 @@ local M = {}
 M.base46 = {
 	theme = "onedark",
 	transparency = true,
-
-	hl_override = {
-		CursorLine = { bg = "statusline_bg" },
-	},
 }
 
 M.ui = {
