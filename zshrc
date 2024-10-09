@@ -111,10 +111,13 @@ alias vim="nvim"
 alias vi="nvim"
 alias cat="bat -p --theme OneHalfDark"
 alias py="python3"
-alias release="sh /Users/carbyn/workspace/jarvis/scripts/release.sh"
-alias hklog="tail -f ~/workspace/jarvis/logs/hk.log"
+
 alias jj="cd ~/workspace/jarvis/"
 alias jd="cd ~/workspace/dotfile/"
+alias release="sh /Users/carbyn/workspace/jarvis/scripts/release.sh"
+alias kj="sh /Users/carbyn/workspace/jarvis/scripts/kill_hk.sh"
+alias ko="sh /Users/carbyn/workspace/jarvis/scripts/kill_opend.sh"
+alias hklog="tail -f ~/workspace/jarvis/logs/hk.log"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
