@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 alias cat="bat -p --theme OneHalfDark"
+alias vmd="glow -w 0"
 alias py="python3"
 
 alias jj="cd ~/workspace/jarvis/"
