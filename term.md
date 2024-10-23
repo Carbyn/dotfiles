@@ -9,4 +9,4 @@
 ## p10k
 ## bat
 ## neovim + NvChad
-## pip vmd
+## glow
