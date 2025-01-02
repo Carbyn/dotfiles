@@ -113,7 +113,7 @@ alias cat="bat -p --theme OneHalfDark"
 alias vmd="glow -w 0"
 alias py="python3"
 
-alias jj="cd ~/workspace/jarvis/"
+alias jj="cd ~/workspace/jarvis/src"
 alias jd="cd ~/workspace/dotfile/"
 alias release="sh /Users/carbyn/workspace/jarvis/scripts/release.sh"
 alias kj="sh /Users/carbyn/workspace/jarvis/scripts/kill_hk.sh"
