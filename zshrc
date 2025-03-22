@@ -115,7 +115,7 @@ alias py="python3"
 
 alias jj="cd ~/workspace/jarvis/src"
 alias jd="cd ~/workspace/dotfile/"
-alias mj="sh /Users/carbyn/workspace/jarvis/scripts/make_jarvis.sh"
+alias mq="sh /Users/carbyn/workspace/jarvis/scripts/make_qbar.sh"
 alias kj="sh /Users/carbyn/workspace/jarvis/scripts/kill_hk.sh"
 alias ko="sh /Users/carbyn/workspace/jarvis/scripts/kill_opend.sh"
 alias hklog="tail -f ~/workspace/jarvis/logs/hk.log"
