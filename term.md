@@ -14,4 +14,4 @@
 `NvChad`
 
 ## pip3
-`pip3 install csvkit`
+`pip3 install isort black csvkit`
