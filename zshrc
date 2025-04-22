@@ -113,12 +113,14 @@ alias cat="bat -p --theme OneHalfDark"
 alias vmd="glow -w 0"
 alias py="python3"
 
-alias jj="cd ~/workspace/jarvis/src"
+alias jj="cd ~/workspace/jarvis/"
+alias jn="cd ~/workspace/jarvis/next/"
 alias jd="cd ~/workspace/dotfile/"
-alias mq="sh /Users/carbyn/workspace/jarvis/scripts/make_qbar.sh"
-alias kj="sh /Users/carbyn/workspace/jarvis/scripts/kill_hk.sh"
+alias jb="cd ~/workspace/xcode/QBar/"
+alias kj="sh /Users/carbyn/workspace/jarvis/scripts/kill_main.sh"
 alias ko="sh /Users/carbyn/workspace/jarvis/scripts/kill_opend.sh"
-alias hklog="tail -f ~/workspace/jarvis/logs/hk.log"
+alias kq="sh /Users/carbyn/workspace/jarvis/scripts/kill_qbar.sh"
+alias mlog="tail -f ~/workspace/jarvis/logs/main.log"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
