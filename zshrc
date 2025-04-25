@@ -110,8 +110,9 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 alias cat="bat -p --theme OneHalfDark"
-alias vmd="glow -w 0"
 alias py="python3"
+alias vmd="glow -w 0"
+alias csvlook="python3 /Users/carbyn/workspace/sak/colorcsv/colorcsv.py"
 
 alias jj="cd ~/workspace/jarvis/"
 alias jn="cd ~/workspace/jarvis/next/"
@@ -120,7 +121,7 @@ alias jb="cd ~/workspace/xcode/QBar/"
 alias kj="sh /Users/carbyn/workspace/jarvis/scripts/kill_main.sh"
 alias ko="sh /Users/carbyn/workspace/jarvis/scripts/kill_opend.sh"
 alias kq="sh /Users/carbyn/workspace/jarvis/scripts/kill_qbar.sh"
-alias mlog="tail -f ~/workspace/jarvis/logs/main.log"
+alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
