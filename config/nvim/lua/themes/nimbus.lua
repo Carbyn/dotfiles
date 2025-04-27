@@ -15,23 +15,24 @@ M.base_30 = {
 
 	red = "#ff4f79",
 	baby_pink = "#ff8a8a",
-	pink = "#ef90d4",
+	pink = "#eb4691",
 	line = "#292e32",
 	green = "#b3e896",
-	vibrant_green = "#d4f0a3",
-	nord_blue = "#99b9d8",
+	vibrant_green = "#7eca9c",
+	nord_blue = "#81a1c1",
 	blue = "#86c9ff",
 	yellow = "#fcde78",
-	sun = "#ffd17a",
+	sun = "#ebcb8b",
 	purple = "#da8cf7",
 	dark_purple = "#c882e7",
-	teal = "#a8d3d9",
+	teal = "#519aba",
 	orange = "#ffb35c",
 	cyan = "#73fafd",
+
 	statusline_bg = "#22262e",
-	lightbg = "#4d5358",
-	pmenu_bg = "#99b9d8",
-	folder_bg = "#99b9d8",
+	lightbg = "#2d3139",
+	pmenu_bg = "#61afef",
+	folder_bg = "#61afef",
 }
 
 M.base_16 = {
@@ -50,11 +51,11 @@ M.base_16 = {
 	base0C = "#73fafd",
 	base0D = "#86c9ff",
 	base0E = "#da8cf7",
-	base0F = "#ef90d4",
+	base0F = "#eb4691",
 }
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "mistynight")
+M = require("base46").override_theme(M, "nimbus")
 
 return M
