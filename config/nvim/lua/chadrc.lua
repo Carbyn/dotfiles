@@ -6,7 +6,8 @@ local M = {}
 
 M.base46 = {
 	transparency = false,
-	theme = "onedark",
+	theme = "nimbus",
+	-- theme = "onedark",
 	changed_themes = {
 		onedark = {
 			base_16 = {
