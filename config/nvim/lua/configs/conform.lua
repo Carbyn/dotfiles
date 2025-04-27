@@ -1,5 +1,6 @@
 local options = {
 	formatters_by_ft = {
+		bash = { "shfmt" },
 		lua = { "stylua" },
 		python = { "isort", "black" },
 		-- css = { "prettier" },
