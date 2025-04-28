@@ -2,9 +2,9 @@ local M = {}
 
 M.base_30 = {
 	white = "#cacaca",
-	darker_black = "#1e2026",
-	black = "#212329",
-	black2 = "#24262c",
+	darker_black = "#181a20",
+	black = "#1b1d23",
+	black2 = "#22242a",
 	one_bg = "#282c34",
 	one_bg2 = "#353b45",
 	one_bg3 = "#373b43",
