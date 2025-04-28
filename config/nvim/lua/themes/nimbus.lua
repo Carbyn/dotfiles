@@ -15,7 +15,7 @@ M.base_30 = {
 
 	red = "#ff4f79",
 	baby_pink = "#ff8a8a",
-	pink = "#eb4691",
+	pink = "#ee867e",
 	line = "#292e32",
 	green = "#b3e896",
 	vibrant_green = "#7eca9c",
@@ -51,7 +51,7 @@ M.base_16 = {
 	base0C = "#73fafd",
 	base0D = "#86c9ff",
 	base0E = "#da8cf7",
-	base0F = "#eb4691",
+	base0F = "#ee867e",
 }
 
 M.type = "dark"
