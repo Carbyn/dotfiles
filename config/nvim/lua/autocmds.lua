@@ -38,8 +38,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup#always-open-nvim-tree
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function(data)
-    if vim.fn.isdirectory(data.file) == 1 then
+    local is_dir = vim.fn.isdirectory(data.file) == 1
+    if is_dir then
       require("nvim-tree.api").tree.open()
+      return
+    end
+
+    local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+    if no_name then
+      vim.cmd "Nvdash"
     end
   end,
 })

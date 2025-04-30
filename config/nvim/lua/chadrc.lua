@@ -5,14 +5,16 @@
 local M = {}
 
 M.base46 = {
-	transparency = false,
-	theme = "nimbus",
+  transparency = false,
+  theme = "nimbus",
 }
 
 M.ui = {
-	tabufline = {
-		order = { "treeOffset", "buffers", "tabs" },
-	},
+  tabufline = {
+    order = { "treeOffset", "buffers", "tabs" },
+  },
 }
+
+M.nvdash = { load_on_startup = false }
 
 return M

@@ -1,4 +1,4 @@
-require("nvchad.options")
+require "nvchad.options"
 
 local g = vim.g
 local o = vim.o
