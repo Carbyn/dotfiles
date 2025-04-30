@@ -47,6 +47,21 @@ return {
 	},
 
 	{
+		"nvim-tree/nvim-tree.lua",
+		opts = {
+			git = { ignore = false },
+			filters = {
+				custom = {
+					".DS_Store",
+					"__pycache__",
+					"*.log",
+					"\\.log\\..*",
+				},
+			},
+		},
+	},
+
+	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
