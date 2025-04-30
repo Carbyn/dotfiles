@@ -19,14 +19,30 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
-			ensure_installed = { "bash-language-server", "lua-language-server", "prettier", "shfmt", "stylua" },
+			ensure_installed = {
+				"bash-language-server",
+				"lua-language-server",
+				"mdformat",
+				"prettier",
+				"pyright",
+				"shfmt",
+				"stylua",
+			},
 		},
 	},
 
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
-			ensure_installed = { "bash", "lua", "python", "vim", "vimdoc" },
+			ensure_installed = {
+				"bash",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"python",
+				"vim",
+				"vimdoc",
+			},
 		},
 	},
 

@@ -15,6 +15,10 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+lspconfig.bashls.setup({
+	filetypes = { "sh", "bash", "zsh" },
+})
+
 -- typescript
 -- lspconfig.tsserver.setup({
 -- 	on_attach = on_attach,
