@@ -5,9 +5,13 @@ return {
 	font_size = 14.0,
 	line_height = 1,
 
-	color_scheme = "iTerm2 Dark Background",
-	colors = { background = "#131313", foreground = "#c7c7c7" },
+	color_scheme = "iTerm2 Smoooooth",
+	colors = {
+		background = "#131313",
+		foreground = "#c7c7c7",
+	},
 	enable_tab_bar = true,
+	use_fancy_tab_bar = false,
 	hide_tab_bar_if_only_one_tab = true,
 
 	window_background_opacity = 0.9,
@@ -21,9 +25,16 @@ return {
 	},
 	window_decorations = "RESIZE",
 
+	native_macos_fullscreen_mode = true,
+
 	scrollback_lines = 10000,
 
 	keys = {
+		{
+			key = "Enter",
+			mods = "CMD",
+			action = wezterm.action.ToggleFullScreen,
+		},
 		{
 			key = "d",
 			mods = "CMD",
@@ -56,6 +67,6 @@ return {
 		},
 	},
 
-	initial_cols = 160,
-	initial_rows = 40,
+	initial_cols = 180,
+	initial_rows = 60,
 }
