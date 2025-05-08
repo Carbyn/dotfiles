@@ -5,7 +5,7 @@ return {
 	font_size = 14.0,
 	line_height = 1,
 
-	color_scheme = "iTerm2 Default",
+	color_scheme = "iTerm2 Dark Background",
 	colors = { background = "#131313", foreground = "#c7c7c7" },
 	enable_tab_bar = true,
 	hide_tab_bar_if_only_one_tab = true,
