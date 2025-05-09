@@ -1,5 +1,3 @@
-require("event")
-
 local wezterm = require("wezterm")
 local keys = require("keys")
 
@@ -9,6 +7,7 @@ local config = {
 	line_height = 1.1,
 
 	color_scheme = "iTerm2 Smoooooth",
+	-- color_scheme = "Catppuccin Mocha",
 	colors = {
 		background = "#131313",
 		foreground = "#c7c7c7",
@@ -21,7 +20,7 @@ local config = {
 			},
 			inactive_tab = {
 				bg_color = "rgba(50,50,50,0.6)",
-				fg_color = "#c7c7c7",
+				fg_color = "#a6a6a6",
 			},
 			new_tab = {
 				bg_color = "rgba(50,50,50,0.6)",
@@ -51,5 +50,8 @@ local config = {
 
 	keys = keys,
 }
+
+require("event")
+-- require("plugin")
 
 return config
