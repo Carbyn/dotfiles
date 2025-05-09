@@ -47,7 +47,7 @@ local config = {
 	initial_cols = 180,
 	initial_rows = 60,
 
-	scrollback_lines = 100000,
+	scrollback_lines = 10000,
 
 	keys = keys,
 }
