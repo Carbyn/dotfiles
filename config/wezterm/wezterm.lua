@@ -6,7 +6,7 @@ local keys = require("keys")
 local config = {
 	font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular" }),
 	font_size = 14.0,
-	line_height = 1,
+	line_height = 1.1,
 
 	color_scheme = "iTerm2 Smoooooth",
 	colors = {
@@ -32,12 +32,7 @@ local config = {
 	native_macos_fullscreen_mode = true,
 	window_close_confirmation = "NeverPrompt",
 
-	window_padding = {
-		left = 5,
-		right = 5,
-		top = 0,
-		bottom = 0,
-	},
+	window_padding = { left = 5, right = 5, top = 0, bottom = 0 },
 	window_decorations = "RESIZE",
 
 	initial_cols = 180,
