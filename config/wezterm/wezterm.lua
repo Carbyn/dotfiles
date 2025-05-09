@@ -12,11 +12,20 @@ local config = {
 	colors = {
 		background = "#131313",
 		foreground = "#c7c7c7",
+
 		tab_bar = {
-			background = "#111111",
+			background = "rgba(50,50,50,0.6)",
 			active_tab = {
-				bg_color = "#111111",
+				bg_color = "rgba(19,19,19,0.90)",
+				fg_color = "#ffffff",
+			},
+			inactive_tab = {
+				bg_color = "rgba(50,50,50,0.6)",
 				fg_color = "#c7c7c7",
+			},
+			new_tab = {
+				bg_color = "rgba(50,50,50,0.6)",
+				fg_color = "#ffffff",
 			},
 		},
 	},
