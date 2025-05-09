@@ -30,6 +30,7 @@ local config = {
 	window_background_opacity = 0.9,
 	macos_window_background_blur = 10,
 	native_macos_fullscreen_mode = true,
+	window_close_confirmation = "NeverPrompt",
 
 	window_padding = {
 		left = 5,
