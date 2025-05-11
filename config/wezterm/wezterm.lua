@@ -7,7 +7,6 @@ local config = {
 	line_height = 1.1,
 
 	color_scheme = "iTerm2 Smoooooth",
-	-- color_scheme = "Catppuccin Mocha",
 	colors = {
 		background = "#131313",
 		foreground = "#c7c7c7",
@@ -43,8 +42,8 @@ local config = {
 	window_padding = { left = 5, right = 5, top = 0, bottom = 0 },
 	window_decorations = "RESIZE",
 
-	initial_cols = 180,
-	initial_rows = 60,
+	initial_cols = 168,
+	initial_rows = 48,
 
 	scrollback_lines = 10000,
 
@@ -52,6 +51,5 @@ local config = {
 }
 
 require("event")
--- require("plugin")
 
 return config
