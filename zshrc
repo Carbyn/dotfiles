@@ -122,7 +122,7 @@ alias kj="sh ~/workspace/jarvis/scripts/kill_main.sh"
 alias ko="sh ~/workspace/jarvis/scripts/kill_opend.sh"
 alias kq="sh ~/workspace/jarvis/scripts/kill_qbar.sh"
 alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
-alias ct="python3 ~/workspace/sak/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv"
+alias jt="python3 ~/workspace/sak/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
