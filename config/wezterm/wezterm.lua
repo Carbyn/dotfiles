@@ -39,7 +39,7 @@ local config = {
 	native_macos_fullscreen_mode = true,
 	window_close_confirmation = "NeverPrompt",
 
-	window_padding = { left = 5, right = 5, top = 5, bottom = 5 },
+	window_padding = { left = 0, right = 0, top = 0, bottom = 0 },
 	window_decorations = "RESIZE",
 
 	initial_cols = 168,
