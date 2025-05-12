@@ -9,21 +9,21 @@ local config = {
 	color_scheme = "iTerm2 Smoooooth",
 	colors = {
 		background = "#131313",
-		foreground = "#c7c7c7",
+		foreground = "#cacaca",
 
 		tab_bar = {
 			background = "rgba(50,50,50,0.6)",
 			active_tab = {
 				bg_color = "rgba(19,19,19,0.90)",
-				fg_color = "#ffffff",
+				fg_color = "#cacaca",
 			},
 			inactive_tab = {
 				bg_color = "rgba(50,50,50,0.6)",
-				fg_color = "#a6a6a6",
+				fg_color = "#6f737b",
 			},
 			new_tab = {
 				bg_color = "rgba(50,50,50,0.6)",
-				fg_color = "#ffffff",
+				fg_color = "#cacaca",
 			},
 		},
 	},
@@ -39,7 +39,7 @@ local config = {
 	native_macos_fullscreen_mode = true,
 	window_close_confirmation = "NeverPrompt",
 
-	window_padding = { left = 5, right = 5, top = 0, bottom = 0 },
+	window_padding = { left = 5, right = 5, top = 5, bottom = 5 },
 	window_decorations = "RESIZE",
 
 	initial_cols = 168,
