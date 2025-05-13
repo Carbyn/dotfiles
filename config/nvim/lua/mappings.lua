@@ -11,4 +11,4 @@ end, { desc = "terminal new float term" })
 
 map("n", "<leader>tt", function()
   require("base46").toggle_transparency()
-end, { noremap = true, silent = true, desc = "toggle background transparency" })
+end, { noremap = true, silent = true, desc = "toggle transparency" })

@@ -5,8 +5,11 @@
 local M = {}
 
 M.base46 = {
-  transparency = false,
+  transparency = true,
   theme = "nimbus",
+  hl_add = {
+    TabLineFill = { bg = "NONE" },
+  },
 }
 
 M.ui = {
