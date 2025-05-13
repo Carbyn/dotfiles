@@ -4,7 +4,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-local custom = require "custom"
+local custom_ui = require "custom.ui"
 
 M.base46 = {
   theme = "nimbus",
@@ -17,7 +17,11 @@ M.base46 = {
 M.ui = {
   tabufline = {
     order = { "treeHeader", "buffers" },
-    modules = { treeHeader = custom.treeHeader },
+    modules = { treeHeader = custom_ui.treeHeader },
+  },
+  statusline = {
+    order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor", "clock" },
+    modules = { clock = custom_ui.clock },
   },
 }
 

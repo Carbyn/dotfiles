@@ -18,4 +18,19 @@ M.treeHeader = function()
   return header
 end
 
+M.clock = function()
+  return "%#St_NormalMode#" .. os.date " %H:%M "
+end
+
+local timer = vim.loop.new_timer()
+if timer ~= nil then
+  timer:start(
+    0,
+    1000,
+    vim.schedule_wrap(function()
+      vim.cmd "redrawstatus"
+    end)
+  )
+end
+
 return M
