@@ -1,12 +1,14 @@
 -- This file needs to have same structure as nvconfig.lua
--- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 
 ---@type ChadrcConfig
 local M = {}
 
+local custom = require "custom"
+
 M.base46 = {
-  transparency = true,
   theme = "nimbus",
+  transparency = true,
   hl_add = {
     TabLineFill = { bg = "NONE" },
   },
@@ -14,7 +16,8 @@ M.base46 = {
 
 M.ui = {
   tabufline = {
-    order = { "treeOffset", "buffers", "tabs" },
+    order = { "treeHeader", "buffers" },
+    modules = { treeHeader = custom.treeHeader },
   },
 }
 
