@@ -5,9 +5,10 @@ M.treeHeader = function()
     return ""
   end
 
-  local header = "Explorer"
+  local header = "EXPLORER"
   local tree_width = 30
-  local left_padding = math.floor((tree_width - #header) / 2)
+  local pos = "left" -- "left|center"
+  local left_padding = pos == "left" and 2 or math.floor((tree_width - #header) / 2)
   local right_padding = tree_width - left_padding - #header
   header = "%#NvimTreeNormal#"
     .. string.rep(" ", left_padding)
@@ -19,7 +20,7 @@ M.treeHeader = function()
 end
 
 M.clock = function()
-  return "%#St_NormalMode#" .. os.date " %H:%M "
+  return "%#St_Clock#" .. os.date " %H:%M "
 end
 
 local timer = vim.loop.new_timer()

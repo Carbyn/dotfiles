@@ -11,6 +11,7 @@ M.base46 = {
   transparency = true,
   hl_add = {
     TabLineFill = { bg = "NONE" },
+    St_Clock = { bg = "nord_blue", fg = "black", bold = true },
   },
 }
 
