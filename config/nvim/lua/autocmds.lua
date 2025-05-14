@@ -58,13 +58,15 @@ vim.api.nvim_create_autocmd("VimResized", {
     local opts = require("nvconfig").base46
     local lines = vim.o.lines
 
-    if lines > 55 then
+    if lines > 56 then
       if opts.transparency then
         require("base46").toggle_transparency()
+        require("ui").toggle_transparency()
       end
     else
       if not opts.transparency then
         require("base46").toggle_transparency()
+        require("ui").toggle_transparency()
       end
     end
   end,
