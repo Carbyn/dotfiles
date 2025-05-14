@@ -1,6 +1,14 @@
 local M = {}
 
-M.treeHeader = function()
+local colors = dofile(vim.g.base46_cache .. "colors")
+M.hl_groups = {
+  TabLineFill = { bg = "NONE" },
+  NvimTreeHeader = { bg = "NONE", fg = colors.white, bold = true },
+  NvimTreeHeaderDark = { bg = colors.darker_black, fg = colors.white, bold = true },
+  St_Clock = { bg = colors.nord_blue, fg = colors.black, bold = true },
+}
+
+M.tree_header = function()
   if not require("nvim-tree.api").tree.is_visible() then
     return ""
   end
@@ -25,11 +33,10 @@ end
 
 M.toggle_transparency = function()
   local opts = require("nvconfig").base46
-  local colors = dofile(vim.g.base46_cache .. "colors")
   if opts.transparency then
-    vim.api.nvim_set_hl(0, "NvimTreeHeader", { bg = "NONE", fg = colors.white, bold = true })
+    vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeader)
   else
-    vim.api.nvim_set_hl(0, "NvimTreeHeader", { bg = colors.darker_black, fg = colors.white, bold = true })
+    vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeaderDark)
   end
 end
 

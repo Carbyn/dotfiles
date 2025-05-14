@@ -10,16 +10,16 @@ M.base46 = {
   theme = "nimbus",
   transparency = true,
   hl_add = {
-    TabLineFill = { bg = "NONE" },
-    NvimTreeHeader = { bg = "NONE", fg = "white", bold = true },
-    St_Clock = { bg = "nord_blue", fg = "black", bold = true },
+    TabLineFill = ui.hl_groups.TabLineFill,
+    NvimTreeHeader = ui.hl_groups.NvimTreeHeader,
+    St_Clock = ui.hl_groups.St_Clock,
   },
 }
 
 M.ui = {
   tabufline = {
-    order = { "treeHeader", "buffers" },
-    modules = { treeHeader = ui.treeHeader },
+    order = { "tree_header", "buffers" },
+    modules = { tree_header = ui.tree_header },
   },
   statusline = {
     order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor", "clock" },
