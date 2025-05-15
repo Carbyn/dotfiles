@@ -111,8 +111,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias cat="bat -p --theme OneHalfDark"
 alias py="python3"
+
 alias vmd="glow -w 0"
-alias csvlook="python3 ~/workspace/sak/colorcsv/colorcsv.py"
+alias csvlook="python3 ~/workspace/jarvis/colorcsv/colorcsv.py"
 
 alias jj="cd ~/workspace/jarvis/"
 alias jn="cd ~/workspace/jarvis/next/"
@@ -122,7 +123,7 @@ alias kj="sh ~/workspace/jarvis/scripts/kill_main.sh"
 alias ko="sh ~/workspace/jarvis/scripts/kill_opend.sh"
 alias kq="sh ~/workspace/jarvis/scripts/kill_qbar.sh"
 alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
-alias jt="python3 ~/workspace/sak/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv"
+alias jt="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv; python3 ~/workspace/jarvis/scripts/stat_trade.py ~/workspace/jarvis/data/trade_2025.csv"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
