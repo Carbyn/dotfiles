@@ -1,6 +1,12 @@
 local wezterm = require("wezterm")
 local keys = require("keys")
 
+local bg = "#131313"
+local fg = "#cacaca"
+local tab_bg = "rgba(50,50,50,0.6)"
+local active_tab_bg = "rgba(19,19,19,0.9)"
+local inactive_tab_fg = "#6f737b"
+
 local config = {
 	font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular" }),
 	font_size = 14.0,
@@ -8,22 +14,21 @@ local config = {
 
 	color_scheme = "iTerm2 Smoooooth",
 	colors = {
-		background = "#131313",
-		foreground = "#cacaca",
-
+		background = bg,
+		foreground = fg,
 		tab_bar = {
-			background = "rgba(50,50,50,0.6)",
+			background = tab_bg,
 			active_tab = {
-				bg_color = "rgba(19,19,19,0.90)",
-				fg_color = "#cacaca",
+				bg_color = active_tab_bg,
+				fg_color = fg,
 			},
 			inactive_tab = {
-				bg_color = "rgba(50,50,50,0.6)",
-				fg_color = "#6f737b",
+				bg_color = tab_bg,
+				fg_color = inactive_tab_fg,
 			},
 			new_tab = {
-				bg_color = "rgba(50,50,50,0.6)",
-				fg_color = "#cacaca",
+				bg_color = tab_bg,
+				fg_color = fg,
 			},
 		},
 	},
