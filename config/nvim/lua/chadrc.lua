@@ -25,6 +25,7 @@ M.ui = {
     order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor", "clock" },
     modules = { clock = ui.clock },
   },
+  telescope = { style = "bordered" },
 }
 
 M.nvdash = { load_on_startup = false }
