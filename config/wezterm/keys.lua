@@ -1,6 +1,12 @@
 local wezterm = require("wezterm")
 
 return {
+	{
+		key = ",",
+		mods = "SUPER",
+		action = wezterm.action.SpawnCommandInNewTab({ args = { "/opt/homebrew/bin/nvim", wezterm.config_file } }),
+	},
+
 	{ key = "Enter", mods = "SUPER", action = wezterm.action.ToggleFullScreen },
 
 	{ key = "u", mods = "SUPER", action = wezterm.action.EmitEvent("toggle-opacity") },
