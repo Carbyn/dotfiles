@@ -16,18 +16,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   desc = "Load folds view",
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "NvimTree",
-  callback = function()
-    local bufname = vim.api.nvim_buf_get_name(0)
-    local filename = vim.fn.fnamemodify(bufname, ":t")
-    if filename:match "^NvimTree_%d+$" then
-      vim.api.nvim_buf_set_name(0, "NvimTree")
-    end
-  end,
-  desc = "Set stl filename to NvimTree forcefully",
-})
-
 local tab_group = vim.api.nvim_create_augroup("FileTypeSpecificTabs", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   group = tab_group,
