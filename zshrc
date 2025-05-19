@@ -100,14 +100,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vim="nvim"
 alias vi="nvim"
+alias vim="nvim"
 alias cat="bat -p --theme OneHalfDark"
+alias vmd="glow -w 0"
 alias py="python3"
 
-alias vmd="glow -w 0"
-alias csvlook="python3 ~/workspace/jarvis/colorcsv/colorcsv.py"
+# eza aliases
+alias ls='eza --icons'
+alias ll='eza -lah --icons'
+alias la='eza -a --icons'
+alias lla='eza -la --icons'
+alias lt='eza -T --icons'
+alias lg='eza -lah --git --icons'
+alias lsd='eza -D --icons'
+alias lS='eza -lah --sort=size -r --icons'
+alias lM='eza -lah --sort=modified -r --icons'
 
+# jump and jarvis aliases
+alias csvlook="python3 ~/workspace/jarvis/colorcsv/colorcsv.py"
 alias jj="cd ~/workspace/jarvis/"
 alias jn="cd ~/workspace/jarvis/next/"
 alias jd="cd ~/workspace/dotfile/"
