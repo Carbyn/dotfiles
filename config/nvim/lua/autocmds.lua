@@ -53,22 +53,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
   desc = "Open nvim-tree when path is a dir.\n Show Nvdash when no name file opened",
 })
 
-vim.api.nvim_create_autocmd("VimResized", {
+vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
   callback = function()
-    local opts = require("nvconfig").base46
-    local lines = vim.o.lines
-
-    if lines > 56 then
-      if opts.transparency then
-        require("base46").toggle_transparency()
-        require("ui").toggle_transparency()
-      end
-    else
-      if not opts.transparency then
-        require("base46").toggle_transparency()
-        require("ui").toggle_transparency()
-      end
-    end
+    require("ui").toggle_transparency(true)
   end,
   desc = "Toggle transparency automatically",
 })

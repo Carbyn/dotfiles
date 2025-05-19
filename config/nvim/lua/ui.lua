@@ -31,12 +31,29 @@ M.clock = function()
   return "%#St_Clock#" .. os.date " %H:%M "
 end
 
-M.toggle_transparency = function()
+M.toggle_transparency = function(auto)
   local opts = require("nvconfig").base46
-  if opts.transparency then
-    vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeader)
+  local lines = vim.o.lines
+
+  if auto == true then
+    if lines > 56 then
+      if opts.transparency then
+        require("base46").toggle_transparency()
+        vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeaderDark)
+      end
+    else
+      if not opts.transparency then
+        require("base46").toggle_transparency()
+        vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeader)
+      end
+    end
   else
-    vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeaderDark)
+    require("base46").toggle_transparency()
+    if opts.transparency then
+      vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeader)
+    else
+      vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeaderDark)
+    end
   end
 end
 
@@ -44,7 +61,7 @@ local timer = vim.loop.new_timer()
 if timer ~= nil then
   timer:start(
     0,
-    1000,
+    3000,
     vim.schedule_wrap(function()
       vim.cmd "redrawstatus"
     end)
