@@ -36,7 +36,7 @@ M.toggle_transparency = function(auto)
   local lines = vim.o.lines
 
   if auto == true then
-    if lines > 56 then
+    if lines > 50 then
       if opts.transparency then
         require("base46").toggle_transparency()
         vim.api.nvim_set_hl(0, "NvimTreeHeader", M.hl_groups.NvimTreeHeaderDark)
