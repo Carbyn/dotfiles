@@ -120,7 +120,7 @@ alias lM='eza -lah --sort=modified -r --icons'
 # jump and jarvis aliases
 alias csvlook="python3 ~/workspace/jarvis/colorcsv/colorcsv.py"
 alias jj="cd ~/workspace/jarvis/"
-alias jn="cd ~/workspace/jarvis/next/"
+alias js="cd ~/workspace/jarvis/src/"
 alias jd="cd ~/workspace/dotfile/"
 alias jb="cd ~/workspace/xcode/QBar/"
 alias kj="sh ~/workspace/jarvis/scripts/kill_main.sh"
