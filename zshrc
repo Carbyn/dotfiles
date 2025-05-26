@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+plugins=(starship eza zoxide fzf git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,20 +102,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias vi="nvim"
 alias vim="nvim"
-alias cat="bat -p --theme OneHalfDark"
-alias vmd="glow -w 0"
+alias bat="bat -p --theme OneHalfDark"
+alias glow="glow -w 0"
 alias py="python3"
-
-# eza aliases
-alias ls='eza --icons'
-alias ll='eza -lah --icons'
-alias la='eza -a --icons'
-alias lla='eza -la --icons'
-alias lt='eza -T --icons'
-alias lg='eza -lah --git --icons'
-alias lsd='eza -D --icons'
-alias lS='eza -lah --sort=size -r --icons'
-alias lM='eza -lah --sort=modified -r --icons'
 
 # jump and jarvis aliases
 alias csvlook="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py"
@@ -128,5 +117,3 @@ alias ko="sh ~/workspace/jarvis/scripts/kill_opend.sh"
 alias kq="sh ~/workspace/jarvis/scripts/kill_qbar.sh"
 alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
 alias jt="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv; python3 ~/workspace/jarvis/scripts/stat_trade.py ~/workspace/jarvis/data/trade_2025.csv"
-
-eval "$(starship init zsh)"
