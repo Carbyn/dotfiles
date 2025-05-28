@@ -109,7 +109,7 @@ alias py="python3"
 # jump and jarvis aliases
 alias jj="cd ~/workspace/jarvis/"
 alias js="cd ~/workspace/jarvis/src/"
-alias jd="cd ~/workspace/dotfile/"
+alias jd="cd ~/workspace/dotfiles/"
 alias jb="cd ~/workspace/xcode/QBar/"
 
 alias kj="sh ~/workspace/jarvis/scripts/kill_main.sh"
