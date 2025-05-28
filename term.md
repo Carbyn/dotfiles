@@ -2,6 +2,14 @@
 
 ## brew
 
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+## terminal
+
+`brew install --cask iterm2 wezterm`
+
+## sak
+
 `brew install autojump bat black btop eza fastfetch fd fzf git glow isort neovim ripgrep sd starship tokei tree`
 
 ## nerd-font
