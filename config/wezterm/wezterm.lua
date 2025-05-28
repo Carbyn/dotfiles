@@ -39,8 +39,8 @@ local config = {
 	show_new_tab_button_in_tab_bar = true,
 	tab_max_width = 999,
 
-	window_background_opacity = 0.9,
-	macos_window_background_blur = 10,
+	window_background_opacity = 0.8,
+	macos_window_background_blur = 20,
 	native_macos_fullscreen_mode = true,
 	window_close_confirmation = "NeverPrompt",
 

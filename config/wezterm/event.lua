@@ -13,7 +13,7 @@ wezterm.on("toggle-opacity", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
 
 	if is_transparent then
-		overrides.window_background_opacity = 0.9
+		overrides.window_background_opacity = 0.8
 	else
 		overrides.window_background_opacity = 1.0
 	end
