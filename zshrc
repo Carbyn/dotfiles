@@ -107,13 +107,16 @@ alias glow="glow -w 0"
 alias py="python3"
 
 # jump and jarvis aliases
-alias csvlook="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py"
 alias jj="cd ~/workspace/jarvis/"
 alias js="cd ~/workspace/jarvis/src/"
 alias jd="cd ~/workspace/dotfile/"
 alias jb="cd ~/workspace/xcode/QBar/"
+
 alias kj="sh ~/workspace/jarvis/scripts/kill_main.sh"
 alias ko="sh ~/workspace/jarvis/scripts/kill_opend.sh"
 alias kq="sh ~/workspace/jarvis/scripts/kill_qbar.sh"
+
 alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
+
+alias csvlook="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py"
 alias jt="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv; python3 ~/workspace/jarvis/scripts/stat_trade.py ~/workspace/jarvis/data/trade_2025.csv"
