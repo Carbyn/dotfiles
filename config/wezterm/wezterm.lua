@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local keys = require("keys")
 
-local bg = "#131313"
+local bg = "#151515"
 local fg = "#cacaca"
 local tab_bg = "rgba(50,50,50,0.6)"
 local active_tab_bg = "rgba(19,19,19,0.9)"
