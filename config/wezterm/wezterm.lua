@@ -10,7 +10,7 @@ local inactive_tab_fg = "#6f737b"
 local config = {
 	font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular" }),
 	font_size = 14.0,
-	line_height = 1.1,
+	line_height = 1.0,
 
 	color_scheme = "iTerm2 Smoooooth",
 	colors = {
