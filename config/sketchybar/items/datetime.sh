@@ -7,7 +7,7 @@ date=(
 time=(
     update_freq=1
     padding_left=-8
-    script='sketchybar --set $NAME label="$(date "+%T")"'
+    script='sketchybar --set $NAME label="$(date "+%H:%M")"'
 )
 
 sketchybar \
