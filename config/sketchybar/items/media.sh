@@ -8,7 +8,7 @@ media=(
     scroll_texts=on
     updates=on
     drawing=off
-    update_freq=3
+    update_freq=5
     script="$PLUGIN_DIR/media.sh"
 )
 

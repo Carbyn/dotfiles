@@ -1,6 +1,7 @@
 #!/bin/bash
 
 volume=(
+    width=40
     script="$PLUGIN_DIR/volume.sh"
 )
 

@@ -1,10 +1,12 @@
 #!/bin/bash
 
 wifi=(
+    width=40
     update_freq=5
     script="$PLUGIN_DIR/wifi.sh"
 )
 vpn=(
+    width=40
     update_freq=5
     script="$PLUGIN_DIR/vpn.sh"
 )
