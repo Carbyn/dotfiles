@@ -5,13 +5,13 @@ date=(
     script='sketchybar --set $NAME label="$(date +"%a %d %b")"'
 )
 time=(
-    label.align=left
     update_freq=1
-    script='sketchybar --set $NAME label="$(date "+%H:%M")"'
+    padding_left=-8
+    script='sketchybar --set $NAME label="$(date "+%T")"'
 )
 
 sketchybar \
     --add item time center \
     --set time "${time[@]}" \
-    --add item date center \
+    --add item date right \
     --set date "${date[@]}"

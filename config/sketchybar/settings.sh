@@ -7,7 +7,7 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 
 bar=(
     position=top
-    height=26 # 35
+    height=30
     color=$BAR_COLOR
     border_color=$BAR_BORDER_COLOR
 )
@@ -39,7 +39,7 @@ default=(
     popup.background.color=$POPUP_BACKGROUND_COLOR
 
     background.corner_radius=5
-    background.height=26
+    background.height=30
     background.border_width=1
 )
 
