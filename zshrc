@@ -120,3 +120,5 @@ alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
 
 alias csvlook="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py"
 alias jt="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv; python3 ~/workspace/jarvis/scripts/stat_trade.py ~/workspace/jarvis/data/trade_2025.csv"
+
+export EDITOR="nvim"
