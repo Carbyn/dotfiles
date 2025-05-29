@@ -9,9 +9,6 @@ case $SOURCE in
 'com.apple.keylayout.PinyinKeyboard')
     LABEL=🇨🇳
     ;;
-'com.apple.keylayout.Russian')
-    LABEL=🇷🇺
-    ;;
 esac
 
 sketchybar --set $NAME label=$LABEL

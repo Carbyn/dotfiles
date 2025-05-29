@@ -14,4 +14,5 @@ sketchybar \
     --add item time center \
     --set time "${time[@]}" \
     --add item date right \
-    --set date "${date[@]}"
+    --set date "${date[@]}" \
+    click_script="open -a Calendar"
