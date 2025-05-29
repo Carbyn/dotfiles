@@ -1,7 +1,6 @@
 #!/bin/bash
 
 input=(
-    label.font.size=15
     script="$PLUGIN_DIR/input.sh"
 )
 
