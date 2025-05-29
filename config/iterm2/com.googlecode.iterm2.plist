@@ -3614,6 +3614,8 @@ The script should do this: \(ai.prompt)</string>
 	</dict>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>ReportHorizontalScrollEvents</key>
 	<true/>
 	<key>SeparateStatusBarsPerPane</key>

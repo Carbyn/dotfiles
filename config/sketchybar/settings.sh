@@ -17,7 +17,7 @@ default=(
 
     icon.font.family="$FONT"
     icon.font.style="Bold"
-    icon.font.size=13.0
+    icon.font.size=15.0
     icon.color=$ICON_COLOR
     icon.highlight_color=$GREY
     icon.padding_left=8
