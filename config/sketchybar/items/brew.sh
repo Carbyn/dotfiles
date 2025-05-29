@@ -4,6 +4,7 @@ source "$CONFIG_DIR/settings.sh"
 
 brew=(
     icon=􀐚
+    width=40
     update_freq=300
     script="$PLUGIN_DIR/brew.sh"
 )
