@@ -1,8 +1,14 @@
 #!/bin/bash
 
+if is_dark_mode; then
+    ICON_COLOR=$GREEN
+else
+    ICON_COLOR=$BLACK
+fi
+
 cpu=(
-    icon=
-    icon.color=$GREEN
+    icon=􀧓
+    icon.color=$ICON_COLOR
     update_freq=5
     script="$PLUGIN_DIR/cpu.sh"
 )

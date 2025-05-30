@@ -1,9 +1,15 @@
 #!/bin/bash
 
+if is_dark_mode; then
+    ICON_COLOR=$SKY
+else
+    ICON_COLOR=$BLACK
+fi
+
 media=(
     icon=
-    icon.color=$SKY
-    label.max_chars=35
+    icon.color=$ICON_COLOR
+    label.max_chars=30
     label.scroll_duration=200
     scroll_texts=on
     updates=on

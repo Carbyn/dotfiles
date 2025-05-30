@@ -7,9 +7,11 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 
 bar=(
     position=top
-    height=30
+    topmost=window
+    height=24
     color=$BAR_COLOR
     border_color=$BAR_BORDER_COLOR
+    blur_radius=10
 )
 
 default=(
@@ -17,9 +19,9 @@ default=(
 
     icon.font.family="$FONT"
     icon.font.style="Bold"
-    icon.font.size=15.0
+    icon.font.size=14.0
     icon.color=$ICON_COLOR
-    icon.highlight_color=$GREY
+    icon.highlight_color=$ICON_HL_COLOR
     icon.padding_left=8
     icon.padding_right=$PADDINGS
 
@@ -27,7 +29,7 @@ default=(
     label.font.style="Semibold"
     label.font.size=13.0
     label.color=$LABEL_COLOR
-    label.highlight_color=$GREY
+    label.highlight_color=$ICON_HL_COLOR
 
     padding_right=$PADDINGS
     padding_left=$PADDINGS
@@ -39,7 +41,7 @@ default=(
     popup.background.color=$POPUP_BACKGROUND_COLOR
 
     background.corner_radius=5
-    background.height=30
+    background.height=24
     background.border_width=1
 )
 

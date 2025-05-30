@@ -16,10 +16,10 @@ if [ "$IS_CLICK" = "click" ]; then
     VPN_STATUS=$(scutil --nwi | grep -E '^   utun[0-9]')
 fi
 
-ICON=􀲊
+ICON=􀞠
 HIGHLIGHT=on
 if [ -n "$VPN_STATUS" ]; then
-    ICON=􀙨
+    ICON=􁃘
     HIGHLIGHT=off
 fi
 
