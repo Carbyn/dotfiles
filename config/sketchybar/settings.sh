@@ -3,7 +3,7 @@
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
 FONT="JetBrainsMono Nerd Font"
-PADDINGS=3 # All paddings use this value (icon, label, background)
+PADDINGS=4 # All paddings use this value (icon, label, background)
 
 bar=(
     position=top
@@ -22,7 +22,7 @@ default=(
     icon.font.size=14.0
     icon.color=$ICON_COLOR
     icon.highlight_color=$ICON_HL_COLOR
-    icon.padding_left=8
+    icon.padding_left=$PADDINGS
     icon.padding_right=$PADDINGS
 
     label.font.family="$FONT"
