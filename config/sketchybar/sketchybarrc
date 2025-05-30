@@ -15,9 +15,10 @@ source $ITEM_DIR/network_rates.sh
 source $ITEM_DIR/media.sh
 
 # --- Center Items ---
-source $ITEM_DIR/datetime.sh
+source $ITEM_DIR/time.sh
 
 # --- Right Side Items ---
+source $ITEM_DIR/date.sh
 source $ITEM_DIR/input.sh
 source $ITEM_DIR/focus.sh
 source $ITEM_DIR/theme.sh
