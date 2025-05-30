@@ -6,5 +6,4 @@ volume=(
 
 sketchybar --add item volume right \
     --set volume "${volume[@]}" \
-    click_script="$PLUGIN_DIR/volume.sh click" \
-    --subscribe volume volume_change
+    --subscribe volume volume_change mouse.clicked

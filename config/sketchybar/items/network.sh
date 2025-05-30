@@ -15,4 +15,4 @@ sketchybar --add item wifi right \
     \
     --add item vpn right \
     --set vpn "${vpn[@]}" \
-    click_script="$PLUGIN_DIR/vpn.sh click"
+    --subscribe vpn mouse.clicked
