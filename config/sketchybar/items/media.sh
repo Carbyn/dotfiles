@@ -14,9 +14,11 @@ media=(
     scroll_texts=on
     updates=on
     drawing=off
-    update_freq=5
     script="$PLUGIN_DIR/media.sh"
 )
 
 sketchybar --add item media left \
-    --set media "${media[@]}"
+    --set media "${media[@]}" \
+    \
+    --add event music_change 'com.apple.Music.playerInfo' \
+    --subscribe media music_change
