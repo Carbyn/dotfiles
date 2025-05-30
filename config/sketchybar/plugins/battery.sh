@@ -6,7 +6,7 @@ BATTERY_INFO="$(pmset -g batt)"
 PERCENTAGE=$(echo "$BATTERY_INFO" | grep -Eo "\d+%" | cut -d% -f1)
 CHARGING=$(echo "$BATTERY_INFO" | grep 'AC Power')
 
-if [ $PERCENTAGE = "" ]; then
+if [ "$PERCENTAGE" = "" ]; then
     exit 0
 fi
 
@@ -34,4 +34,4 @@ if [[ $CHARGING != "" ]]; then
     ICON=􀢋
 fi
 
-sketchybar --set $NAME icon=$ICON icon.color=$COLOR label="$PERCENTAGE%"
+sketchybar --set $NAME icon=$ICON icon.color=$COLOR drawing=on

@@ -1,7 +1,9 @@
 #!/bin/bash
 
 battery=(
-    update_freq=30
+    update_freq=60
+    updates=on
+    drawing=off
     script="$PLUGIN_DIR/battery.sh"
 )
 
