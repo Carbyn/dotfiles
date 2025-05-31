@@ -17,10 +17,10 @@ case "$SENDER" in
 
     sed -i '' "s/^THEME=\"$THEME\"/THEME=\"$NEW_THEME\"/" $CONFIG_DIR/colors.sh
 
-    if [ -f "$NEW_WALLPAPER" ]; then
+    if [[ -f "$NEW_WALLPAPER" ]]; then
         osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$NEW_WALLPAPER\""
     else
-        echo "Error: NEW_WALLPAPER not found"
+        echo "Error: NEW_WALLPAPER not found, set wallpapers path in plugins/theme.sh first."
     fi
     ;;
 esac

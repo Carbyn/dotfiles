@@ -1,7 +1,10 @@
 #!/bin/bash
 
-if [[ "$SENDER" = "focus_enabled" ]]; then
+case "$SENDER" in
+"focus_enabled")
     sketchybar --set $NAME drawing=on
-else
+    ;;
+"focus_disabled")
     sketchybar --set $NAME drawing=off
-fi
+    ;;
+esac

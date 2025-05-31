@@ -4,7 +4,7 @@ case "$SENDER" in
 "mouse.clicked")
     IS_MUTED=$(osascript -e "output muted of (get volume settings)")
 
-    if [ "$IS_MUTED" = "true" ]; then
+    if [[ "$IS_MUTED" == "true" ]]; then
         osascript -e "set volume output muted false"
         osascript -e "set volume output volume 30"
     else

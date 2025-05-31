@@ -6,7 +6,7 @@ refresh() {
     zsh -c 'brew update &>/dev/null'
     OUTDATED=$(zsh -c 'brew outdated --verbose')
 
-    if [ -z "$OUTDATED" ]; then
+    if [[ -z "$OUTDATED" ]]; then
         return
     fi
 
