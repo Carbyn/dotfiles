@@ -9,7 +9,8 @@ vpn=(
     script="$PLUGIN_DIR/vpn.sh"
 )
 
-sketchybar --add item wifi right \
+sketchybar \
+    --add item wifi right \
     --set wifi "${wifi[@]}" \
     --subscribe wifi wifi_change \
     \
