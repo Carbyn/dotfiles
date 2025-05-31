@@ -7,7 +7,7 @@ else
 fi
 
 media=(
-    icon=
+    icon=
     icon.color=$ICON_COLOR
     label.max_chars=30
     label.scroll_duration=200
