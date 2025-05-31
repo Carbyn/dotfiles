@@ -8,7 +8,11 @@ local active_tab_bg = "rgba(19,19,19,0.9)"
 local inactive_tab_fg = "#6f737b"
 
 local config = {
-	font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular" }),
+	-- font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular" }),
+	font = wezterm.font_with_fallback({
+		{ family = "FiraMono Nerd Font Mono", weight = "Regular" },
+		"Apple Symbols",
+	}),
 	font_size = 14.0,
 	line_height = 1.0,
 
