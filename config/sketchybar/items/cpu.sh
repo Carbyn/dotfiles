@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$CONFIG_DIR/colors.sh"
+
 if is_dark_mode; then
     ICON_COLOR=$GREEN
 else
