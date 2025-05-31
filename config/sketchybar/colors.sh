@@ -42,7 +42,7 @@ CRUST=0xFF11111B
 THEME="dark"
 
 is_dark_mode() {
-    if [[ "$THEME" == "dark" ]]; then
+    if [[ "$THEME" = "dark" ]]; then
         return 0
     else
         return 1
