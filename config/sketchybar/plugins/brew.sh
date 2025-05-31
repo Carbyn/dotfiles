@@ -10,7 +10,7 @@ refresh() {
         return
     fi
 
-    args=(--set $NAME icon.color=$RED)
+    args=(--set $NAME icon.color=$TEAL)
     if $(sketchybar --query $NAME | jq '.popup.items | length != 0'); then
         args+=(--remove '/brew.popup\.*/')
     fi
@@ -31,7 +31,7 @@ update() {
     osascript -e 'display notification "Starting Brew package updates..." with title "Package Updates"'
     zsh -c 'brew upgrade >/dev/null && brew cleanup >/dev/null'
     osascript -e 'display notification "Brew packages updated" with title "Package Updates"'
-    sketchybar -m --set $NAME icon.color=$ICON_COLOR --remove '/brew.popup\.*/' >/dev/null
+    sketchybar -m --set $NAME icon.color=$ICON_COLOR --remove '/brew.popup\.*/' >/dev/null 2>&1
 }
 
 case "$SENDER" in
