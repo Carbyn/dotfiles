@@ -31,7 +31,7 @@ update() {
     osascript -e 'display notification "Starting Brew package updates..." with title "Package Updates"'
     zsh -c 'brew upgrade >/dev/null && brew cleanup >/dev/null'
     osascript -e 'display notification "Brew packages updated" with title "Package Updates"'
-    sketchybar -m --set $NAME icon.color=$ICON_COLOR --remove '/brew.popup\.*/' >/dev/null 2>&1
+    sketchybar -m --set $NAME icon.color=$ICON_COLOR --remove '/brew.popup\.*/' >/dev/null
 }
 
 case "$SENDER" in
