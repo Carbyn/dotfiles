@@ -39,7 +39,7 @@ MANTLE=0xFF181825
 CRUST=0xFF11111B
 
 ### dark/light mode
-THEME="dark"
+THEME="light"
 
 is_dark_mode() {
     if [[ "$THEME" == "dark" ]]; then
