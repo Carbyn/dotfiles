@@ -20,7 +20,7 @@
 └── README.md
 ```
 
-## Install
+## How to use
 
 > Read `term.md` for more details.
 
