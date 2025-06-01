@@ -2,8 +2,47 @@
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
-FONT="JetBrainsMono Nerd Font"
-PADDINGS=4 # All paddings use this value (icon, label, background)
+FONT="JetBrainsMono Nerd Font" # Nerd font is preferred
+PADDINGS=4                     # All paddings use this value (icon, label, background)
+
+THEME="dark"         # light|dark
+AUTO_SWITCH_THEME=on # on|off
+LIGHT_THEME_START_TIME="06:00"
+LIGHT_THEME_END_TIME="15:00"
+
+LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg) # light theme wallpaper path
+DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)   # dark theme wallpaper path
+
+is_dark_mode() {
+    if [[ "$THEME" == "dark" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+# General bar colors
+if is_dark_mode; then
+    BAR_COLOR=$TRANSPARENT
+    BAR_BORDER_COLOR=$TRANSPARENT
+    ICON_COLOR=$WHITE
+    LABEL_COLOR=$WHITE
+    HIGHLIGHT_COLOR=$GREY
+    POPUP_BACKGROUND_COLOR=$BG1
+    POPUP_BORDER_COLOR=$WHITE
+    BACKGROUND_COLOR=$BG0
+    BACKGROUND_BORDER_COLOR=$BG2
+else
+    BAR_COLOR=$HALF_TRANSPARENT
+    BAR_BORDER_COLOR=$HALF_TRANSPARENT
+    ICON_COLOR=$BLACK
+    LABEL_COLOR=$BLACK
+    HIGHLIGHT_COLOR=$BLACK
+    POPUP_BACKGROUND_COLOR=$BG1
+    POPUP_BORDER_COLOR=$BLACK
+    BACKGROUND_COLOR=$BG0
+    BACKGROUND_BORDER_COLOR=$BG2
+fi
 
 bar=(
     position=top
@@ -21,7 +60,7 @@ default=(
     icon.font.style="Bold"
     icon.font.size=14.0
     icon.color=$ICON_COLOR
-    icon.highlight_color=$ICON_HL_COLOR
+    icon.highlight_color=$HIGHLIGHT_COLOR
     icon.padding_left=$PADDINGS
     icon.padding_right=$PADDINGS
 
@@ -29,7 +68,7 @@ default=(
     label.font.style="Semibold"
     label.font.size=13.0
     label.color=$LABEL_COLOR
-    label.highlight_color=$ICON_HL_COLOR
+    label.highlight_color=$HIGHLIGHT_COLOR
 
     padding_right=$PADDINGS
     padding_left=$PADDINGS

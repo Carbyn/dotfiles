@@ -1,14 +1,8 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/settings.sh"
 
-DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
-LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
-
-AUTO_TOGGLE_THEME=on
-TOGGLE_THEME_TIME="15:00"
-
-toggle_theme() {
+switch_theme() {
     if is_dark_mode; then
         NEW_THEME="light"
         NEW_WALLPAPER=$LIGHT_WALLPAPER
@@ -17,7 +11,7 @@ toggle_theme() {
         NEW_WALLPAPER=$DARK_WALLPAPER
     fi
 
-    sed -i '' "s/^THEME=\"$THEME\"/THEME=\"$NEW_THEME\"/" $CONFIG_DIR/colors.sh
+    sed -i '' "s/^THEME=\"$THEME\"/THEME=\"$NEW_THEME\"/" $CONFIG_DIR/settings.sh
 
     if [[ -f "$NEW_WALLPAPER" ]]; then
         osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$NEW_WALLPAPER\""
@@ -26,25 +20,40 @@ toggle_theme() {
     fi
 }
 
-if [[ "$AUTO_TOGGLE_THEME" == "on" ]]; then
-    current_time=$(date +%H:%M)
+is_time_between() {
+    local start="$1"
+    local end="$2"
+    local current=$(date +%H:%M)
+
+    local start_min=$((10#${start%%:*} * 60 + 10#${start##*:}))
+    local end_min=$((10#${end%%:*} * 60 + 10#${end##*:}))
+    local curr_min=$((10#${current%%:*} * 60 + 10#${current##*:}))
+
+    if ((end_min < start_min)); then
+        ((curr_min >= start_min || curr_min < end_min))
+    else
+        ((curr_min >= start_min && curr_min < end_min))
+    fi
+}
+
+if [[ "$AUTO_SWITCH_THEME" == "on" ]]; then
     if is_dark_mode; then
-        if [[ "$current_time" < "$TOGGLE_THEME_TIME" ]]; then
-            toggle_theme
+        if is_time_between $LIGHT_THEME_START_TIME $LIGHT_THEME_END_TIME; then
+            switch_theme
         fi
     else
-        if [[ "$current_time" > "$TOGGLE_THEME_TIME" ]]; then
-            toggle_theme
+        if ! is_time_between $LIGHT_THEME_START_TIME $LIGHT_THEME_END_TIME; then
+            switch_theme
         fi
     fi
 fi
 
 case "$SENDER" in
 "mouse.clicked")
-    if [[ "$AUTO_TOGGLE_THEME" == "on" ]]; then
-        osascript -e 'display notification "Auto toggle theme enabled" with title "Toggle Theme"'
+    if [[ "$AUTO_SWITCH_THEME" == "on" ]]; then
+        osascript -e 'display notification "Auto switch theme enabled" with title "Switch Theme"'
     else
-        toggle_theme
+        switch_theme
     fi
     ;;
 esac
