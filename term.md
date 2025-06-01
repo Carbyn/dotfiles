@@ -44,13 +44,15 @@ plugins=(
 
 ## nvim
 
+### neovim
+
 `brew install neovim`
 
-### [NvChad](https://nvchad.com)
+### NvChad
 
 ## python
 
 ```
-brew install pytho`
+brew install python
 pip3 install isort black csvkit
 ```
