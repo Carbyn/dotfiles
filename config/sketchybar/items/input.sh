@@ -1,6 +1,7 @@
 #!/bin/bash
 
 input=(
+    icon.font.size=13.0
     script="$PLUGIN_DIR/input.sh"
 )
 

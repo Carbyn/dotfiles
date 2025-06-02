@@ -1,10 +1,13 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/settings.sh"
 
 BATTERY_INFO="$(pmset -g batt)"
 PERCENTAGE=$(echo "$BATTERY_INFO" | grep -Eo "\d+%" | cut -d% -f1)
 CHARGING=$(echo "$BATTERY_INFO" | grep 'AC Power')
+
+# TEST: no battery on mac studio
+# PERCENTAGE=65
 
 if [[ -z "$PERCENTAGE" ]]; then
     exit 0

@@ -10,10 +10,10 @@ vpn=(
 )
 
 sketchybar \
-    --add item wifi right \
-    --set wifi "${wifi[@]}" \
-    --subscribe wifi wifi_change \
-    \
     --add item vpn right \
     --set vpn "${vpn[@]}" \
-    --subscribe vpn mouse.clicked
+    --subscribe vpn mouse.clicked \
+    \
+    --add item wifi right \
+    --set wifi "${wifi[@]}" \
+    --subscribe wifi wifi_change
