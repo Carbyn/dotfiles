@@ -38,11 +38,11 @@ is_time_between() {
 
 if [[ "$AUTO_SWITCH_THEME" == "on" ]]; then
     if is_dark_mode; then
-        if is_time_between $LIGHT_THEME_START_TIME $LIGHT_THEME_END_TIME; then
+        if is_time_between $LIGHT_START_TIME $LIGHT_END_TIME; then
             switch_theme
         fi
     else
-        if ! is_time_between $LIGHT_THEME_START_TIME $LIGHT_THEME_END_TIME; then
+        if ! is_time_between $LIGHT_START_TIME $LIGHT_END_TIME; then
             switch_theme
         fi
     fi
