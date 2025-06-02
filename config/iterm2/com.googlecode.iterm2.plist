@@ -2402,6 +2402,8 @@ The script should do this: \(ai.prompt)</string>
 	<true/>
 	<key>HideTab</key>
 	<true/>
+	<key>HideTabNumber</key>
+	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>MaxVertically</key>
@@ -3642,6 +3644,8 @@ The script should do this: \(ai.prompt)</string>
 	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TabsHaveCloseButton</key>
+	<false/>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
