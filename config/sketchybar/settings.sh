@@ -5,9 +5,6 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 FONT="JetBrainsMono Nerd Font" # Nerd font is preferred
 PADDINGS=4                     # All paddings use this value (icon, label, background)
 
-WEATHER_LATITUDE=30.2416
-WEATHER_LONGITUDE=120.1189
-
 THEME="dark"         # light|dark
 AUTO_SWITCH_THEME=on # on|off
 LIGHT_START_TIME="06:00"
@@ -15,6 +12,9 @@ LIGHT_END_TIME="15:00"
 
 LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
+
+WEATHER_LATITUDE=30.2416
+WEATHER_LONGITUDE=120.1189
 
 is_dark_mode() {
     if [[ "$THEME" == "dark" ]]; then
