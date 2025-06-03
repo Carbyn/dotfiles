@@ -9,57 +9,68 @@ case "$SENDER" in
     ;;
 esac
 
-# https://github.com/chubin/wttr.in?tab=readme-ov-file#json-output
-url="https://wttr.in/~${LOCATION}?format=j2"
+# https://open-meteo.com/en/docs/cma-api
+url="https://api.open-meteo.com/v1/forecast?latitude=${WEATHER_LATITUDE}&longitude=${WEATHER_LONGITUDE}&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1&models=cma_grapes_global"
+
 weather_info=$(curl -sf --max-time 5 "$url")
 curl_status=$?
 
+hour=$(date "+%H")
 if [[ $curl_status -eq 0 ]] && [[ -n "$weather_info" ]]; then
-    temp_C=$(echo "$weather_info" | jq -r '.current_condition[0].temp_C')
-    weather_code=$(echo "$weather_info" | jq -r '.current_condition[0].weatherCode')
+    temp_C=$(echo "$weather_info" | jq -r ".hourly.temperature_2m[$hour]")
+    weather_code=$(echo "$weather_info" | jq -r ".hourly.weather_code[$hour]")
 else
+    echo "Error: weather curl failed. Curl status: $curl_status, weather_info: $weather_info"
     exit 1
 fi
 
 if [[ -z "$temp_C" ]] || [[ -z "$weather_code" ]]; then
+    echo "Error: parse weather_info failed. temp_C: $temp_C, weather_code: $weather_code"
     exit 1
 fi
 
-# https://github.com/chubin/wttr.in/blob/master/lib/constants.py
-case "$weather_code" in
-"Sunny" | 113)
+# https://open-meteo.com/en/docs
+case $weather_code in
+0 | 1)
     ICON=􀆮
     ;;
-"PartlyCloudy" | 116)
+2)
     ICON=􀇕
     ;;
-"Cloudy" | 119 | "VeryCloudy" | 122)
+3)
     ICON=􀇃
     ;;
-"Fog" | 143 | 248 | 260)
+45 | 48)
     ICON=􀇋
     ;;
-"LightRain" | 266 | 293 | 296 | "LightShowers" | 176 | 263 | 353)
+51 | 53 | 55 | 56 | 57)
     ICON=􀇗
     ;;
-"HeavyRain" | 302 | 308 | 359 | "HeavyShowers" | 299 | 305 | 356 | "LightSleet" | 182 | 185 | 281 | 284 | 311 | 314 | 317 | 350 | 377 | "LightSleetShowers" | 179 | 362 | 365 | 374)
+61 | 63 | 65 | 66 | 67)
     ICON=􀇉
     ;;
-"ThunderyHeavyRain" | 389 | "ThunderyShowers" | 200 | 386 | "ThunderySnowShowers" | 392)
-    ICON=􀇟
-    ;;
-"LightSnow" | 227 | 320 | "LightSnowShowers" | 323 | 326 | 368)
+71 | 73 | 75)
     ICON=􀇏
     ;;
-"HeavySnow" | 230 | 329 | 332 | 338 | "HeavySnowShowers" | 335 | 371 | 395)
+77)
     ICON=􀇥
     ;;
-"Unknown" | *)
+80 | 81 | 82)
+    ICON=􀇉
+    ;;
+85 | 86)
+    ICON=􀇏
+    ;;
+95 | 96 | 99)
+    ICON=􀇟
+    ;;
+*)
     ICON=􀆿
-    echo $weather_desc
+    echo "Unknown weather code: $weather_code"
     ;;
 esac
 
+temp_C=$(awk "BEGIN {printf(\"%.0f\", $temp_C)}")
 LABEL="${temp_C}°C"
 
 sketchybar --set $NAME icon="$ICON" label="$LABEL"
