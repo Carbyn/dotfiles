@@ -10,7 +10,7 @@ refresh() {
         return
     fi
 
-    args=(--set $NAME icon.color=$TEAL)
+    args=(--set $NAME icon.color=$SALMON)
     if $(sketchybar --query $NAME | jq '.popup.items | length != 0'); then
         args+=(--remove '/brew.popup\.*/')
     fi
