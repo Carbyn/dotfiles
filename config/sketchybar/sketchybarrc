@@ -17,6 +17,7 @@ source "$ITEM_DIR/media.sh"
 # --- Center Items ---
 source "$ITEM_DIR/date.sh"
 source "$ITEM_DIR/time.sh"
+source "$ITEM_DIR/weather.sh"
 
 # --- Right Side Items ---
 source "$ITEM_DIR/sleep.sh"

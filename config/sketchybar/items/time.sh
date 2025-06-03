@@ -1,8 +1,9 @@
 #!/bin/bash
 
 time=(
-    update_freq=1
     icon.drawing=off
+    padding_left=10
+    update_freq=1
     script='sketchybar --set $NAME label="$(date "+%H:%M")"'
 )
 
