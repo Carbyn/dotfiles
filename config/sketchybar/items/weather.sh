@@ -1,7 +1,7 @@
 #!/bin/bash
 
 weather=(
-    padding_left=10
+    padding_left=8
     update_freq=600
     script="$PLUGIN_DIR/weather.sh"
 )
