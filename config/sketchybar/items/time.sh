@@ -2,8 +2,11 @@
 
 time=(
     icon.drawing=off
-    padding_left=20
-    padding_right=20
+    width=100
+    align=left
+    padding_left=0
+    padding_right=0
+    label.padding_left=0
     update_freq=1
     script='sketchybar --set $NAME label="$(date "+%H:%M")"'
 )
