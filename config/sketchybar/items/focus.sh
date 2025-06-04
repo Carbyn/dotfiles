@@ -2,6 +2,7 @@
 
 focus=(
     icon=􀆺
+    update_freq=10
     updates=on
     drawing=off
     script="$PLUGIN_DIR/focus.sh"
