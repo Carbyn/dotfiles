@@ -10,7 +10,7 @@ local inactive_tab_fg = "#6f737b"
 local config = {
 	-- font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular" }),
 	font = wezterm.font_with_fallback({
-		{ family = "FiraMono Nerd Font Mono", weight = "Regular" },
+		{ family = "JetBrainsMono Nerd Font Mono", weight = "Regular" },
 		"Apple Symbols",
 	}),
 	font_size = 14.0,
