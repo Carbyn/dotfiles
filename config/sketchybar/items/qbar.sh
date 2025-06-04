@@ -8,11 +8,13 @@ qbar=(
 
 qbar_body=(
     icon.drawing=off
+    script="$PLUGIN_DIR/qbar.sh"
 )
 
 sketchybar \
     --add item qbar_body right \
     --set qbar_body "${qbar_body[@]}" \
+    --subscribe qbar_body mouse.clicked mouse.exited.global \
     \
     --add item qbar right \
     --set qbar "${qbar[@]}" \

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [[ "$NAME" == "qbar_body" ]]; then
+    NAME="qbar"
+fi
+
 source "$CONFIG_DIR/settings.sh"
 
 URL="http://127.0.0.1:9527/get_jarvis_state"
@@ -13,6 +17,8 @@ else
 fi
 
 refresh() {
+    BUILD_POPUP=$1
+
     state_info=$(curl -sf --max-time 5 "$URL")
     curl_status=$?
 
@@ -86,6 +92,10 @@ refresh() {
         --set qbar_body label="$CONTENT" label.color=$COLOR
 
     ### messages popup
+    if [[ "$BUILD_POPUP" == "off" ]]; then
+        exit 0
+    fi
+
     if $(sketchybar --query qbar | jq '.popup.items | length != 0'); then
         sketchybar --remove '/qbar.popup\.*/'
     fi
@@ -115,12 +125,13 @@ refresh() {
 
 case "$SENDER" in
 "mouse.clicked")
+    refresh on
     popup on
     ;;
 "mouse.exited.global")
     popup off
     ;;
 *)
-    refresh
+    refresh off
     ;;
 esac
