@@ -79,15 +79,20 @@ default=(
     padding_right=$PADDINGS
     padding_left=$PADDINGS
 
-    popup.align=right
     popup.background.border_width=1
     popup.background.corner_radius=5
     popup.background.border_color=$POPUP_BORDER_COLOR
     popup.background.color=$POPUP_BACKGROUND_COLOR
 
-    background.corner_radius=5
     background.height=24
     background.border_width=1
+    background.corner_radius=5
+)
+
+popup_item=(
+    icon.drawing=off
+    label.padding_left=$PADDINGS
+    label.padding_right=$PADDINGS
 )
 
 popup_events=(

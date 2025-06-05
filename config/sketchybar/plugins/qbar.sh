@@ -89,18 +89,18 @@ refresh() {
     fi
 
     sketchybar --set qbar label="$PREFIX" \
-        --set qbar_body label="$CONTENT" label.color=$COLOR
+        --set qbar_body drawing=on label="$CONTENT" label.color=$COLOR
 
     ### messages popup
     if [[ "$BUILD_POPUP" == "off" ]]; then
         return
     fi
 
+    args=(--set qbar popup.align=left)
     if $(sketchybar --query qbar | jq '.popup.items | length != 0'); then
-        sketchybar --remove '/qbar.popup\.*/'
+        args+=(--remove '/qbar.popup\.*/')
     fi
 
-    args=()
     if [[ -n "$messages" && "$messages" != "[]" && "$messages" != "null" ]]; then
         while read -r message; do
             read id ts content <<<$(jq -r '.id, .ts, .content' <<<"$message")
@@ -108,17 +108,15 @@ refresh() {
 
             args+=(
                 --add item qbar.popup.$ts popup.qbar
-                --set qbar.popup.$ts label="$time> $content"
+                --set qbar.popup.$ts "${popup_item[@]}" label="$time> $content"
             )
         done < <(echo "$messages" | jq -c 'reverse | .[]')
     else
         args+=(
             --add item qbar.popup.empty popup.qbar
-            --set qbar.popup.empty label="******  No Messages  ******"
+            --set qbar.popup.empty "${popup_item[@]}" label="****** No Messages ******"
         )
     fi
-
-    args+=(--set qbar popup.align=left)
 
     sketchybar -m "${args[@]}"
 }

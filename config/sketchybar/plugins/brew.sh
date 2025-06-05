@@ -10,7 +10,7 @@ refresh() {
         return
     fi
 
-    args=(--set $NAME icon.color=$SALMON)
+    args=(--set $NAME icon.color=$SALMON popup.align=right)
     if $(sketchybar --query $NAME | jq '.popup.items | length != 0'); then
         args+=(--remove '/brew.popup\.*/')
     fi
@@ -19,7 +19,7 @@ refresh() {
     while IFS= read -r package; do
         args+=(
             --add item "$NAME".popup.$COUNTER popup."$NAME"
-            --set "$NAME".popup.$COUNTER label="${package}"
+            --set "$NAME".popup.$COUNTER "${popup_item[@]}" label="${package}"
         )
         COUNTER=$((COUNTER + 1))
     done <<<"$OUTDATED"
