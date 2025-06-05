@@ -4,7 +4,7 @@ source "$CONFIG_DIR/settings.sh"
 
 refresh() {
     zsh -c 'brew update &>/dev/null'
-    OUTDATED=$(zsh -c 'brew outdated --verbose')
+    OUTDATED=$(zsh -c 'brew outdated --verbose | grep -v pinned')
 
     if [[ -z "$OUTDATED" ]]; then
         return
