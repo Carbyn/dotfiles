@@ -13,8 +13,10 @@ LIGHT_END_TIME="15:00"
 LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
-WEATHER_LATITUDE=30.2416
-WEATHER_LONGITUDE=120.1189
+# You can find your city's stationid here https://www.nmc.cn/publish/forecast.html
+WEATHER_NMC_STATIONID="HIieJ"
+WEATHER_METEO_LATITUDE=30.2416
+WEATHER_METEO_LONGITUDE=120.1189
 
 is_dark_mode() {
     if [[ "$THEME" == "dark" ]]; then

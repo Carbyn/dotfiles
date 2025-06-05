@@ -10,7 +10,7 @@ case "$SENDER" in
 esac
 
 # https://open-meteo.com/en/docs/cma-api
-url="https://api.open-meteo.com/v1/forecast?latitude=${WEATHER_LATITUDE}&longitude=${WEATHER_LONGITUDE}&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1&models=cma_grapes_global"
+url="https://api.open-meteo.com/v1/forecast?latitude=${WEATHER_METEO_LATITUDE}&longitude=${WEATHER_METEO_LONGITUDE}&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1&models=cma_grapes_global"
 
 weather_info=$(curl -sf --max-time 5 "$url")
 curl_status=$?
