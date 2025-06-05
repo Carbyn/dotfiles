@@ -24,17 +24,17 @@ else
     exit 1
 fi
 
-if [[ -z "$temp_C" ]] || [[ -z "$weather_code" ]]; then
+if [[ -z "$temp_C" || "$temp_C" == "null" ]] || [[ -z "$weather_code" || "$weather_code" == "null" ]]; then
     echo "Error: parse weather_info failed. temp_C: $temp_C, weather_code: $weather_code"
     exit 1
 fi
 
 # https://open-meteo.com/en/docs
 case $weather_code in
-0 | 1)
+0)
     ICON=􀆮
     ;;
-2)
+1 | 2)
     ICON=􀇕
     ;;
 3)
