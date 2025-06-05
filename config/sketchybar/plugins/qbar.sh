@@ -93,7 +93,7 @@ refresh() {
 
     ### messages popup
     if [[ "$BUILD_POPUP" == "off" ]]; then
-        exit 0
+        return
     fi
 
     if $(sketchybar --query qbar | jq '.popup.items | length != 0'); then
