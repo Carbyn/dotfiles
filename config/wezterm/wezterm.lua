@@ -16,7 +16,7 @@ local config = {
 	font_size = 14.0,
 	line_height = 1.0,
 
-	color_scheme = "iTerm2 Smoooooth",
+	color_scheme = "iTerm2 Dark Background",
 	colors = {
 		background = bg,
 		foreground = fg,
