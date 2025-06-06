@@ -25,7 +25,7 @@ refresh() {
     if [[ $curl_status -eq 0 ]] && [[ -n "$state_info" ]]; then
         read code_name last_price prev_close holding last_run_ts messages <<<$(echo "$state_info" | jq -r '.code_name, .last_price, .prev_close, .holding, .last_run_tsxxx, .messages')
     else
-        echo "Error: state curl failed. Curl status: $curl_status, state_info: $state_info"
+        # echo "Error: state curl failed. Curl status: $curl_status, state_info: $state_info"
         sketchybar --set qbar label="Loading..." \
             --set qbar_body drawing=off
         exit 1
