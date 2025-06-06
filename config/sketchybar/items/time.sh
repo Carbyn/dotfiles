@@ -8,8 +8,9 @@ time=(
     padding_right=0
     label.padding_left=0
     update_freq=1
-    script='sketchybar --set $NAME label="$(date "+%H:%M")"'
+    script="$PLUGIN_DIR/time.sh"
 )
 
 sketchybar --add item time center \
-    --set time "${time[@]}"
+    --set time "${time[@]}" \
+    --subscribe time mouse.clicked
