@@ -5,7 +5,7 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 FONT="JetBrainsMono Nerd Font" # Nerd font is preferred
 PADDINGS=4                     # All paddings use this value (icon, label, background)
 
-THEME="dark" # light|dark
+THEME="light" # light|dark
 AUTO_SWITCH_THEME=on
 LIGHT_START_TIME="06:00"
 LIGHT_END_TIME="15:00"
@@ -14,7 +14,7 @@ LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
 # You can find your city's stationid here https://www.nmc.cn/publish/forecast.html
-WEATHER_NMC_STATIONID="HIieJ"
+WEATHER_NMC_STATIONID="wdcXE"
 WEATHER_METEO_LATITUDE=30.2416
 WEATHER_METEO_LONGITUDE=120.1189
 
