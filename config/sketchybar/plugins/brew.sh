@@ -2,11 +2,20 @@
 
 source "$CONFIG_DIR/settings.sh"
 
+clear() {
+    args=(--set $NAME icon.color=$ICON_COLOR)
+    if $(sketchybar --query $NAME | jq '.popup.items | length != 0'); then
+        args+=(--remove '/brew.popup\.*/')
+    fi
+    sketchybar -m "${args[@]}" >/dev/null
+}
+
 refresh() {
     zsh -c 'brew update &>/dev/null'
     OUTDATED=$(zsh -c 'brew outdated --verbose | grep -v pinned')
 
     if [[ -z "$OUTDATED" ]]; then
+        clear
         return
     fi
 
@@ -31,7 +40,7 @@ update() {
     osascript -e 'display notification "Starting Brew package updates..." with title "Package Updates"'
     zsh -c 'brew upgrade >/dev/null && brew cleanup >/dev/null'
     osascript -e 'display notification "Brew packages updated" with title "Package Updates"'
-    sketchybar -m --set $NAME icon.color=$ICON_COLOR --remove '/brew.popup\.*/' >/dev/null
+    clear
 }
 
 case "$SENDER" in

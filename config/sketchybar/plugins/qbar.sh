@@ -1,10 +1,10 @@
 #!/bin/bash
 
+source "$CONFIG_DIR/settings.sh"
+
 if [[ "$NAME" == "qbar_body" ]]; then
     NAME="qbar"
 fi
-
-source "$CONFIG_DIR/settings.sh"
 
 URL="http://127.0.0.1:9527/get_jarvis_state"
 
