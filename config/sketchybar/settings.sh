@@ -14,7 +14,7 @@ LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
 # You can find your city's stationid here https://www.nmc.cn/publish/forecast.html
-WEATHER_NMC_STATIONID="wdcXE"
+WEATHER_NMC_STATIONID="HIieJ"
 WEATHER_METEO_LATITUDE=30.2416
 WEATHER_METEO_LONGITUDE=120.1189
 

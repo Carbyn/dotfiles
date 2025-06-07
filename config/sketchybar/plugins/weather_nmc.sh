@@ -29,23 +29,53 @@ curl_status=$?
 if [[ $curl_status -eq 0 ]] && [[ -n "$weather_info" ]]; then
     temp=$(echo "$weather_info" | jq -r ".data.real.weather.temperature")
     weather_desc=$(echo "$weather_info" | jq -r ".data.real.weather.info")
+    sunrise=$(echo "$weather_info" | jq -r ".data.real.sunriseSunset.sunrise")
+    sunset=$(echo "$weather_info" | jq -r ".data.real.sunriseSunset.sunset")
 else
     echo "Error: weather curl failed. Curl status: $curl_status, weather_info: $weather_info"
     exit 1
 fi
 
-if [[ -z "$temp" || "$temp" == "null" ]] || [[ -z "$weather_desc" || "$weather_desc" == "null" ]]; then
-    echo "Error: parse weather_info failed. temp: $temp, weather_desc: $weather_desc"
+if [[ -z "$temp" || "$temp" == "null" ]] || [[ -z "$weather_desc" || "$weather_desc" == "null" ]] ||
+    [[ -z "$sunrise" || "$sunrise" == "null" ]] || [[ -z "$sunset" || "$sunset" == "null" ]]; then
+    echo "Error: parse weather_info failed. temp: $temp, weather_desc: $weather_desc, sunrise: $sunrise, sunset: $sunset"
     exit 1
 fi
+
+sunrise=$(echo $sunrise | cut -d ' ' -f2)
+sunset=$(echo $sunset | cut -d ' ' -f2)
+
+is_time_between() {
+    local start="$1"
+    local end="$2"
+    local current=$(date +%H:%M)
+
+    local start_min=$((10#${start%%:*} * 60 + 10#${start##*:}))
+    local end_min=$((10#${end%%:*} * 60 + 10#${end##*:}))
+    local curr_min=$((10#${current%%:*} * 60 + 10#${current##*:}))
+
+    if ((end_min < start_min)); then
+        ((curr_min >= start_min || curr_min < end_min))
+    else
+        ((curr_min >= start_min && curr_min < end_min))
+    fi
+}
+
+in_daytime() {
+    if is_time_between $sunrise $sunset; then
+        return 0
+    else
+        return 1
+    fi
+}
 
 # https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=C4DD7502C8BBD485E2AB8B929608BB05
 case $weather_desc in
 '晴')
-    ICON=􀆮
+    ICON=$(in_daytime && echo 􀆮 || echo 􀆺)
     ;;
 '少云' | '多云')
-    ICON=􀇕
+    ICON=$(in_daytime && echo 􀇕 || echo 􀇛)
     ;;
 '阴')
     ICON=􀇃
@@ -54,10 +84,10 @@ case $weather_desc in
     ICON=􀇋
     ;;
 '霾')
-    ICON=􀆸
+    ICON=$(in_daytime && echo 􀆸 || echo 􁑰)
     ;;
 '阵雨')
-    ICON=􀇗
+    ICON=$(in_daytime && echo 􀇗 || echo 􀇝)
     ;;
 '小雨')
     ICON=􀇅
@@ -90,7 +120,7 @@ case $weather_desc in
     ICON=􀇥
     ;;
 '沙尘天气' | '浮尘' | '扬沙' | '沙尘暴' | '强沙尘暴' | '特强沙尘暴')
-    ICON=􀆶
+    ICON=$(in_daytime && echo 􀆶 || echo 􁶾)
     ;;
 '热带气旋' | '热带低压' | '热带风暴' | '强热带风暴' | '台风' | '强台风' | '超强台风')
     ICON=􀇩
