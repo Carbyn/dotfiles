@@ -15,6 +15,7 @@
 │   ├── sketchybar
 │   ├── wezterm
 │   ├── starship.toml
+├── hammerspoon
 ├── zshrc
 ├── term.md
 └── README.md
@@ -27,4 +28,5 @@
 ```bash
 ln -s config ~/.config
 ln -s zshrc ~/.zshrc
+ln -s hammerspoon ~/.hammerspoon
 ```
