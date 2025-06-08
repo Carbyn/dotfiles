@@ -1,6 +1,3 @@
----@diagnostic disable-next-line: undefined-global
-local hs = hs
-
 local M = {}
 
 M.TOPBAR_HEIGHT = 26

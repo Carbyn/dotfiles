@@ -1,6 +1,3 @@
----@diagnostic disable-next-line: undefined-global
-local hs = hs
-
 local window = require("window")
 
 hs.hotkey.bind({ "cmd", "ctrl" }, "T", function()

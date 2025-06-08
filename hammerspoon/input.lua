@@ -1,6 +1,3 @@
----@diagnostic disable-next-line: undefined-global
-local hs = hs
-
 local M = {}
 
 local chineseAppList = {
