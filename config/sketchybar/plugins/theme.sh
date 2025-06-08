@@ -16,7 +16,7 @@ switch_theme() {
     if [[ -f "$NEW_WALLPAPER" ]]; then
         osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$NEW_WALLPAPER\""
     else
-        echo "Error: NEW_WALLPAPER not found, set wallpapers path in plugins/theme.sh first."
+        echo "Error: NEW_WALLPAPER not found, set wallpapers path in settings.sh first."
     fi
 }
 

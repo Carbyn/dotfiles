@@ -13,6 +13,8 @@ LIGHT_END_TIME="15:00"
 LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
+VPN_NAME="Shadowrocket"
+
 # You can find your city's stationid here https://www.nmc.cn/publish/forecast.html
 WEATHER_NMC_STATIONID="HIieJ"
 WEATHER_METEO_LATITUDE=30.2416

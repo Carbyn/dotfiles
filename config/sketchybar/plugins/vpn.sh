@@ -1,13 +1,14 @@
 #!/bin/bash
 
-VPN_NAME="Shadowrocket"
+source "$CONFIG_DIR/settings.sh"
+
 VPN_STATUS=$(scutil --nwi | grep -E '^   utun[0-9]')
 
 case "$SENDER" in
 "mouse.clicked")
     VPN_EXIST=$(networksetup -showpppoestatus "$VPN_NAME")
     if [[ -z "$VPN_EXIST" ]]; then
-        echo "Error: VPN $VPN_NAME not exists, set VPN name in plugins/vpn.sh first."
+        echo "Error: VPN $VPN_NAME not exists, set VPN name in settings.sh first."
     else
         if [[ -n "$VPN_STATUS" ]]; then
             networksetup -disconnectpppoeservice "$VPN_NAME"
