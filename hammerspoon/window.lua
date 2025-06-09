@@ -5,7 +5,9 @@ M.TOPBAR_HEIGHT = 26
 -- Automatically center new windows on the screen when they are created
 hs.window.filter.default:subscribe(hs.window.filter.windowCreated, function(win)
 	if win:isStandard() then
-		win:centerOnScreen()
+		hs.timer.doAfter(0.2, function()
+			win:centerOnScreen()
+		end)
 	end
 end)
 
@@ -45,12 +47,14 @@ end
 local wf = hs.window.filter.new(true)
 wf:subscribe({
 	"windowMoved",
-	"windowCreated",
+	-- "windowCreated",
 	"windowUnfullscreened",
 	"windowFullscreened",
 	"windowFocused",
-}, function(win, event)
-	M.adjustWindow(win)
+}, function(win, name, event)
+	hs.timer.doAfter(0.2, function()
+		M.adjustWindow(win)
+	end)
 end)
 
 return M
