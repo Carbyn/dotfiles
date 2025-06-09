@@ -6,7 +6,7 @@
 
 ## terminal
 
-`brew install --cask iterm2 wezterm`
+`brew install --cask iterm2 wezterm@nightly`
 
 ## sak
 
@@ -56,3 +56,20 @@ plugins=(
 brew install python
 pip3 install isort black csvkit
 ```
+
+## Bar & Hotkey & InputSwitcher
+
+### sf-symbols
+
+`brew install --cask sf-symbols`
+
+### sketchybar
+
+```
+brew tap FelixKratz/formulae
+brew install sketchybar
+```
+
+### hammerspoon
+
+`brew install hammerspoon`
