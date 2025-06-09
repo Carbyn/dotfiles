@@ -1,10 +1,10 @@
-local window = require("window")
-
+-- App Launcher
 hs.hotkey.bind({ "cmd", "ctrl" }, "T", function()
 	hs.application.launchOrFocus("WezTerm")
 end)
 
-hs.hotkey.bind({ "cmd", "ctrl", "alt" }, "C", function()
+-- Window
+hs.hotkey.bind({ "cmd", "ctrl" }, "C", function()
 	local win = hs.window.frontmostWindow()
 	if not win or not win:isStandard() then
 		return
@@ -12,9 +12,9 @@ hs.hotkey.bind({ "cmd", "ctrl", "alt" }, "C", function()
 	win:centerOnScreen()
 end)
 
-hs.hotkey.bind({ "cmd", "ctrl", "alt" }, "R", function()
-	local win = hs.window.focusedWindow()
+hs.hotkey.bind({ "cmd", "ctrl" }, "F", function()
+	local win = hs.window.frontmostWindow()
 	if win then
-		window.adjustWindow(win)
+		win:maximize()
 	end
 end)
