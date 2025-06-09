@@ -3,7 +3,7 @@
 SOURCE=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID)
 
 case "$SOURCE" in
-'com.apple.keylayout.US')
+'com.apple.keylayout.US' | 'com.apple.keylayout.ABC')
     ICON=🇺🇸
     ;;
 'com.apple.keylayout.PinyinKeyboard')

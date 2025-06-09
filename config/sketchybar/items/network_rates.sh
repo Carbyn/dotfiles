@@ -9,7 +9,6 @@ else
 fi
 
 down=(
-    icon=⇣
     icon=􁾯
     icon.color=$ICON_COLOR
     icon.padding_right=5
