@@ -3,9 +3,9 @@ local keys = require("keys")
 
 local bg = "#151515"
 local fg = "#cacaca"
-local tab_bg = "rgba(50,50,50,0.6)"
-local active_tab_bg = "rgba(19,19,19,0.9)"
-local inactive_tab_fg = "#6f737b"
+local tab_bg = "rgba(40,40,40,0.8)"
+local active_tab_bg = "rgba(21,21,21,0.8)"
+local inactive_tab_fg = "#868686"
 
 local config = {
 	font = wezterm.font_with_fallback({
