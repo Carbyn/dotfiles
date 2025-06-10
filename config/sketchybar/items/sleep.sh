@@ -2,7 +2,7 @@
 
 sleep=(
     icon=􀷄
-    click_script="$PLUGIN_DIR/sleep.sh"
+    click_script="osascript -e 'tell application \"System Events\" to sleep'"
 )
 
 sketchybar --add item sleep right \
