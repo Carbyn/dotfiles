@@ -2,13 +2,17 @@ local M = {}
 
 M.TOPBAR_HEIGHT = 26
 
+M.centerWindow = function(win)
+	if win:isStandard() then
+		win:centerOnScreen()
+	end
+end
+
 -- Automatically center new windows on the screen when they are created
 hs.window.filter.default:subscribe(hs.window.filter.windowCreated, function(win)
-	if win:isStandard() then
-		hs.timer.doAfter(0.2, function()
-			win:centerOnScreen()
-		end)
-	end
+	hs.timer.doAfter(0.2, function()
+		M.centerWindow(win)
+	end)
 end)
 
 local function getUsableFrame(screen)
@@ -18,7 +22,6 @@ local function getUsableFrame(screen)
 	return frame
 end
 
--- Prevent windows from covering the SketchyBar
 M.adjustWindow = function(win)
 	if not win:isStandard() then
 		return
@@ -44,6 +47,7 @@ M.adjustWindow = function(win)
 	end
 end
 
+-- Prevent windows from covering the SketchyBar
 local wf = hs.window.filter.new(true)
 wf:subscribe({
 	"windowMoved",
