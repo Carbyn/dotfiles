@@ -14,7 +14,7 @@ ms=$((RANDOM % 900 + 100))
 ts="$ts$ms"
 
 # https://www.nmc.cn/publish/forecast.html
-weather_info=$(curl -sf --compressed --max-time 5 "https://www.nmc.cn/rest/weather?stationid=$WEATHER_NMC_STATIONID&_=$ts" \
+weather_info=$(curl -sf --compressed --max-time 10 --retry 3 "https://www.nmc.cn/rest/weather?stationid=$WEATHER_NMC_STATIONID&_=$ts" \
     -X 'GET' \
     -H 'Accept: application/json, text/javascript, */*; q=0.01' \
     -H 'Accept-Language: en-US,en;q=0.9' \

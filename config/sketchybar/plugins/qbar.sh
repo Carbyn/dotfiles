@@ -19,7 +19,7 @@ fi
 refresh() {
     BUILD_POPUP=$1
 
-    state_info=$(curl -sf --max-time 5 "$URL")
+    state_info=$(curl -sf --max-time 10 --retry 3 "$URL")
     curl_status=$?
 
     if [[ $curl_status -eq 0 ]] && [[ -n "$state_info" ]]; then
