@@ -4,6 +4,21 @@ hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "R", function()
 end)
 hs.alert.show("HS Config Reloaded")
 
+-- Window
+hs.hotkey.bind({ "cmd", "ctrl", "shift" }, "C", function()
+	local win = hs.window.frontmostWindow()
+	if win and win:isStandard() then
+		win:centerOnScreen()
+	end
+end)
+
+hs.hotkey.bind({ "cmd", "ctrl", "shift" }, "F", function()
+	local win = hs.window.frontmostWindow()
+	if win then
+		win:maximize()
+	end
+end)
+
 -- App Launcher
 hs.hotkey.bind({ "ctrl" }, "space", function()
 	hs.application.launchOrFocus("ChatGPT")
@@ -28,20 +43,4 @@ hs.hotkey.bind({ "cmd", "ctrl" }, "S", function()
 end)
 hs.hotkey.bind({ "cmd", "ctrl" }, "T", function()
 	hs.application.launchOrFocus("WezTerm")
-end)
-
--- Window
-hs.hotkey.bind({ "cmd", "ctrl", "shift" }, "C", function()
-	local win = hs.window.frontmostWindow()
-	if not win or not win:isStandard() then
-		return
-	end
-	win:centerOnScreen()
-end)
-
-hs.hotkey.bind({ "cmd", "ctrl", "shift" }, "F", function()
-	local win = hs.window.frontmostWindow()
-	if win then
-		win:maximize()
-	end
 end)
