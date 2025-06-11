@@ -2,6 +2,15 @@
 
 source "$CONFIG_DIR/settings.sh"
 
+set_wallpaper() {
+    NEW_WALLPAPER=$1
+    if [[ -f "$NEW_WALLPAPER" ]]; then
+        osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$NEW_WALLPAPER\""
+    else
+        echo "Error: NEW_WALLPAPER not found, set wallpapers path in settings.sh first."
+    fi
+}
+
 switch_theme() {
     if is_dark_mode; then
         NEW_THEME="light"
@@ -12,12 +21,7 @@ switch_theme() {
     fi
 
     sed -i '' "s/^THEME=\"$THEME\"/THEME=\"$NEW_THEME\"/" $CONFIG_DIR/settings.sh
-
-    if [[ -f "$NEW_WALLPAPER" ]]; then
-        osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$NEW_WALLPAPER\""
-    else
-        echo "Error: NEW_WALLPAPER not found, set wallpapers path in settings.sh first."
-    fi
+    set_wallpaper $NEW_WALLPAPER
 }
 
 is_time_between() {
@@ -35,6 +39,12 @@ is_time_between() {
         ((curr_min >= start_min && curr_min < end_min))
     fi
 }
+
+if [[ "$THEME" == "light" ]]; then
+    set_wallpaper $LIGHT_WALLPAPER
+else
+    set_wallpaper $DARK_WALLPAPER
+fi
 
 if [[ "$AUTO_SWITCH_THEME" == "on" ]]; then
     if is_dark_mode; then
