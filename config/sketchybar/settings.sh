@@ -45,7 +45,7 @@ else
     ICON_COLOR=$BLACK
     LABEL_COLOR=$BLACK
     HIGHLIGHT_COLOR=$BLACK
-    POPUP_BACKGROUND_COLOR=$TRANSPARENT1
+    POPUP_BACKGROUND_COLOR=$BG3
     POPUP_BORDER_COLOR=$BLACK
     BACKGROUND_COLOR=$BG0
     BACKGROUND_BORDER_COLOR=$BG2
@@ -81,6 +81,7 @@ default=(
     padding_right=$PADDINGS
     padding_left=$PADDINGS
 
+    popup.blur_radius=80
     popup.background.border_width=1
     popup.background.corner_radius=5
     popup.background.border_color=$POPUP_BORDER_COLOR
@@ -93,6 +94,7 @@ default=(
 
 popup_item=(
     icon.drawing=off
+    label.color=$WHITE
     label.padding_left=$PADDINGS
     label.padding_right=$PADDINGS
 )
