@@ -44,9 +44,6 @@ update() {
 }
 
 case "$SENDER" in
-"routine" | "forced")
-    refresh
-    ;;
 "mouse.entered")
     popup on
     ;;
@@ -56,5 +53,8 @@ case "$SENDER" in
 "mouse.clicked")
     popup off
     update
+    ;;
+*)
+    refresh
     ;;
 esac
