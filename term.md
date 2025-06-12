@@ -6,7 +6,7 @@
 
 ## terminal
 
-`brew install --cask iterm2 wezterm@nightly`
+`brew install --cask iterm2 wezterm`
 
 ## sak
 
