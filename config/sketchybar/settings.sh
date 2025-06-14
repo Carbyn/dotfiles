@@ -35,7 +35,7 @@ if is_dark_mode; then
     ICON_COLOR=$WHITE
     LABEL_COLOR=$WHITE
     HIGHLIGHT_COLOR=$GREY
-    POPUP_BACKGROUND_COLOR=$BG1
+    POPUP_BACKGROUND_COLOR=$BG3
     POPUP_BORDER_COLOR=$WHITE
     BACKGROUND_COLOR=$BG0
     BACKGROUND_BORDER_COLOR=$BG2
@@ -81,8 +81,8 @@ default=(
     padding_right=$PADDINGS
     padding_left=$PADDINGS
 
-    popup.blur_radius=80
-    popup.background.border_width=1
+    popup.blur_radius=50
+    popup.background.border_width=0
     popup.background.corner_radius=5
     popup.background.border_color=$POPUP_BORDER_COLOR
     popup.background.color=$POPUP_BACKGROUND_COLOR
