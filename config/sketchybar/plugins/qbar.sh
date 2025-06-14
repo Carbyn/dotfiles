@@ -108,7 +108,7 @@ refresh() {
 
             args+=(
                 --add item qbar.popup.$ts popup.qbar
-                --set qbar.popup.$ts "${popup_item[@]}" label="$time> $content"
+                --set qbar.popup.$ts "${popup_item[@]}" label="$time  $content"
             )
         done < <(echo "$messages" | jq -c 'reverse | .[]')
     else
