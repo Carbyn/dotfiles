@@ -9,6 +9,7 @@ weather=(
     label="--°"
     update_freq=600
     script="$PLUGIN_DIR/weather_nmc.sh"
+    # script="$PLUGIN_DIR/weather_meteo.sh"
 )
 
 sketchybar --add item weather center \
