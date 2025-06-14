@@ -17,7 +17,7 @@ curl_status=$?
 
 hour=$(date "+%H")
 if [[ $curl_status -eq 0 ]] && [[ -n "$weather_info" ]]; then
-    read temp weather_code sunrise sunset <<<$(echo "$weather_info" | jq -r ".hourly.temperature_2m[$hour], .hourly.weather_code[$hour], .daily.sunrise, .daily.sunset")
+    read temp weather_code sunrise sunset <<<$(echo "$weather_info" | jq -r ".hourly.temperature_2m[$hour], .hourly.weather_code[$hour], .daily.sunrise[0], .daily.sunset[0]")
 else
     echo "Error: weather curl failed. Curl status: $curl_status, weather_info: $weather_info"
     exit 1
@@ -28,6 +28,9 @@ if [[ -z "$temp" || "$temp" == "null" ]] || [[ -z "$weather_code" || "$weather_c
     echo "Error: parse weather_info failed. temp: $temp, weather_code: $weather_code, sunrise: $sunrise, sunset: $sunset"
     exit 1
 fi
+
+sunrise=$(echo $sunrise | cut -d 'T' -f2)
+sunset=$(echo $sunset | cut -d 'T' -f2)
 
 is_time_between() {
     local start="$1"
@@ -52,6 +55,7 @@ in_daytime() {
         return 1
     fi
 }
+
 # https://open-meteo.com/en/docs
 case $weather_code in
 0)
