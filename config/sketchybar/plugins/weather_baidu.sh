@@ -9,25 +9,12 @@ case "$SENDER" in
     ;;
 esac
 
-ts=$(date "+%s")
-ms=$((RANDOM % 900 + 100))
-ts="$ts$ms"
-
-# https://www.nmc.cn/publish/forecast.html
-weather_info=$(curl -sf --compressed --max-time 10 --retry 3 "https://www.nmc.cn/rest/weather?stationid=$WEATHER_NMC_STATIONID&_=$ts" \
-    -X 'GET' \
-    -H 'Accept: application/json, text/javascript, */*; q=0.01' \
-    -H 'Accept-Language: en-US,en;q=0.9' \
-    -H 'Accept-Encoding: gzip, deflate, br' \
-    -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15' \
-    -H 'Referer: https://www.nmc.cn/publish/forecast.html' \
-    \
-    -H 'X-Requested-With: XMLHttpRequest')
-
+weather_info=$(curl -sf --max-time 10 --retry 3 https://weathernew.pae.baidu.com/weathernew/pc\?query\=${WEATHER_BAIDU_QUERY}\&srcid\=${WEATHER_BAIDU_SRCID}\&forecast\=long_day_forecast)
 curl_status=$?
 
 if [[ $curl_status -eq 0 ]] && [[ -n "$weather_info" ]]; then
-    read temp weather_desc sunrise sunset <<<$(echo "$weather_info" | jq -r ".data.real.weather.temperature, .data.real.weather.info, .data.real.sunriseSunset.sunrise, .data.real.sunriseSunset.sunset")
+    read temp weather_desc <<<$(echo "$weather_info" | grep 'data\["weather"\]' | cut -d '=' -f2 | cut -d ';' -f1 | jq -r '.temperature, .weather')
+    read sunrise sunset <<<$(echo "$weather_info" | grep 'data\["feature"\]' | cut -d '=' -f2 | cut -d ';' -f1 | jq -r '.sunriseTime, .sunsetTime')
 else
     echo "Error: weather curl failed. Curl status: $curl_status, weather_info: $weather_info"
     exit 1
@@ -38,9 +25,6 @@ if [[ -z "$temp" || "$temp" == "null" ]] || [[ -z "$weather_desc" || "$weather_d
     echo "Error: parse weather_info failed. temp: $temp, weather_desc: $weather_desc, sunrise: $sunrise, sunset: $sunset"
     exit 1
 fi
-
-sunrise=$(echo $sunrise | cut -d ' ' -f2)
-sunset=$(echo $sunset | cut -d ' ' -f2)
 
 is_time_between() {
     local start="$1"

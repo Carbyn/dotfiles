@@ -15,8 +15,14 @@ DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
 VPN_NAME="Shadowrocket"
 
-# You can find your city's stationid here https://www.nmc.cn/publish/forecast.html
+# Ensure that the query and srcid parameters lead to a valid, existing page.
+# For example: https://weathernew.pae.baidu.com/weathernew/pc?query=杭州西湖天气&srcid=4982&forecast=long_day_forecast
+WEATHER_BAIDU_QUERY="杭州西湖天气"
+WEATHER_BAIDU_SRCID="4982"
+
+# To find your city’s station ID, visit: https://www.nmc.cn/publish/forecast.html
 WEATHER_NMC_STATIONID="HIieJ"
+
 WEATHER_METEO_LATITUDE=30.2416
 WEATHER_METEO_LONGITUDE=120.1189
 
