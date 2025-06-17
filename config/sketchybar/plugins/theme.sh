@@ -61,7 +61,7 @@ fi
 case "$SENDER" in
 "mouse.clicked")
     if [[ "$AUTO_SWITCH_THEME" == "on" ]]; then
-        osascript -e 'display notification "Auto switch theme enabled" with title "Switch Theme"'
+        hs -c 'hs.alert("Auto Switch Enabled")'
     else
         switch_theme
     fi
