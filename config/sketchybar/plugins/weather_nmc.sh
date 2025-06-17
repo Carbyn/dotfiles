@@ -69,7 +69,7 @@ in_daytime() {
 # https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=C4DD7502C8BBD485E2AB8B929608BB05
 case $weather_desc in
 '晴')
-    ICON=$(in_daytime && echo 􀆮 || echo 􀆺)
+    ICON=$(in_daytime && echo 􀆮 || echo 􀇁)
     ;;
 '少云' | '多云')
     ICON=$(in_daytime && echo 􀇕 || echo 􀇛)

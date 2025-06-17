@@ -59,7 +59,7 @@ in_daytime() {
 # https://open-meteo.com/en/docs
 case $weather_code in
 0)
-    ICON=$(in_daytime && echo 􀆮 || echo 􀆺)
+    ICON=$(in_daytime && echo 􀆮 || echo 􀇁)
     ;;
 1 | 2)
     ICON=$(in_daytime && echo 􀇕 || echo 􀇛)
