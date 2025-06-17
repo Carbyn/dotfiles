@@ -17,6 +17,11 @@ case "$SENDER" in
         fi
         sleep 1
         VPN_STATUS=$(scutil --nwi | grep -E '^   utun[0-9]')
+        if [[ -n "$VPN_STATUS" ]]; then
+            hs -c 'hs.alert("VPN Connected")'
+        else
+            hs -c 'hs.alert("VPN Disconnected")'
+        fi
     fi
     ;;
 esac
