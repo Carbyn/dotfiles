@@ -15,12 +15,12 @@ DOWN=$((final_rx - initial_rx)) # Bytes per second
 
 human_readable() {
     local bytes=$1
-    if [[ "$bytes" -ge 1073741824 ]]; then
-        printf "%.1f GB/s\n" "$(bc -l <<<"$bytes/1073741824")"
-    elif [[ "$bytes" -ge 1048576 ]]; then
-        printf "%.1f MB/s\n" "$(bc -l <<<"$bytes/1048576")"
-    elif [[ "$bytes" -ge 1024 ]]; then
-        printf "%d KB/s\n" "$(bc <<<"$bytes/1024")"
+    if [[ "$bytes" -ge 1000000000 ]]; then
+        printf "%.1f GB/s\n" "$(bc -l <<<"$bytes/1000000000")"
+    elif [[ "$bytes" -ge 1000000 ]]; then
+        printf "%.1f MB/s\n" "$(bc -l <<<"$bytes/1000000")"
+    elif [[ "$bytes" -ge 1000 ]]; then
+        printf "%d KB/s\n" "$(bc <<<"$bytes/1000")"
     else
         echo "$bytes B/s"
     fi
