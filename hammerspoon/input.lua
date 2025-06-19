@@ -2,14 +2,15 @@ local M = {}
 
 local chineseAppList = {
 	"ChatGPT",
+	"iPhone Mirroring",
 	"Music",
 	"Notes",
 	"QQ",
 	"Safari",
 	"WeChat",
-	"小红书",
-	"抖音",
 	"豆包",
+	"抖音",
+	"小红书",
 }
 
 local inputMethod = {
