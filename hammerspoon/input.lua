@@ -34,17 +34,4 @@ wf:subscribe(hs.window.filter.windowFocused, function(win, appName)
 	end
 end)
 
--- M.appWatcher = hs.application.watcher.new(function(appName, eventType, appObject)
--- 	hs.alert(eventType)
--- 	if eventType == hs.application.watcher.activated then
--- 		if hs.fnutils.contains(chineseAppList, appName) then
--- 			switchInputTo(inputMethod.chinese)
--- 		else
--- 			switchInputTo(inputMethod.english)
--- 		end
--- 	end
--- end)
---
--- M.appWatcher:start()
-
 return M

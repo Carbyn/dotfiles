@@ -2,6 +2,7 @@
 
 input=(
     icon.font.size=13.0
+    update_freq=1 # The input_change event sometimes fails to trigger.
     script="$PLUGIN_DIR/input.sh"
 )
 
