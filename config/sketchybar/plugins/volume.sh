@@ -10,7 +10,7 @@ case "$SENDER" in
     fi
     ;;
 
-"volume_change")
+"volume_change" | *)
     HIGHLIGHT=off
 
     case $INFO in
