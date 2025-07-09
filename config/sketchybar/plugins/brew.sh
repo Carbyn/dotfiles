@@ -3,6 +3,7 @@
 source "$CONFIG_DIR/settings.sh"
 
 clear() {
+    source "$CONFIG_DIR/settings.sh"
     args=(--set $NAME icon.color=$ICON_COLOR)
     if $(sketchybar --query $NAME | jq '.popup.items | length != 0'); then
         args+=(--remove '/brew.popup\.*/')
