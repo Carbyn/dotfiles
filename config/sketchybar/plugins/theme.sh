@@ -62,6 +62,7 @@ fi
 case "$SENDER" in
 "mouse.clicked")
     if [[ "$AUTO_SWITCH_THEME" == "on" ]]; then
+        sketchybar --reload
         hs -c 'hs.alert("Auto Switch Enabled")'
     else
         switch_theme
