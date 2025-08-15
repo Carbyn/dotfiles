@@ -8,6 +8,7 @@ local chineseAppList = {
 	"QQ",
 	"Safari",
 	"WeChat",
+	"富途牛牛",
 	"豆包",
 	"抖音",
 	"小红书",
