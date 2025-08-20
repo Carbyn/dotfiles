@@ -3,14 +3,15 @@ local M = {}
 local chineseAppList = {
 	"ChatGPT",
 	"iPhone Mirroring",
+	"Messages",
 	"Music",
 	"Notes",
 	"QQ",
 	"Safari",
 	"WeChat",
-	"富途牛牛",
 	"豆包",
 	"抖音",
+	"富途牛牛",
 	"小红书",
 }
 
