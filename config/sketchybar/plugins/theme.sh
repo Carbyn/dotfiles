@@ -21,7 +21,7 @@ switch_theme() {
     fi
 
     sed -i '' "s/^THEME=\"$THEME\"/THEME=\"$NEW_THEME\"/" $CONFIG_DIR/settings.sh
-    sketchybar --reload
+    # sketchybar --reload
     set_wallpaper $NEW_WALLPAPER
 }
 

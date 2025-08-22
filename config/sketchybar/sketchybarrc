@@ -31,5 +31,5 @@ source "$ITEM_DIR/center_window.sh"
 source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/qbar.sh" # This is for personal use only and is connected to my local server.
 
-# sketchybar --hotload on
+sketchybar --hotload on
 sketchybar --update
