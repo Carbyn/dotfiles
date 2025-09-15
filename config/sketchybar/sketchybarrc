@@ -28,7 +28,7 @@ source "$ITEM_DIR/focus.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/input.sh"
 source "$ITEM_DIR/center_window.sh"
-source "$ITEM_DIR/brew.sh"
+# source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/qbar.sh" # This is for personal use only and is connected to my local server.
 
 sketchybar --hotload on
