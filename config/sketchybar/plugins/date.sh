@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sketchybar --set $NAME label="$(date +"%a %-d %b")"
+sketchybar --set $NAME label="$(date +"%b %-d %a")"
 
 case "$SENDER" in
 "mouse.clicked")
