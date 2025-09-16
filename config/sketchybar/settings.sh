@@ -5,7 +5,7 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 FONT="JetBrainsMono Nerd Font" # Nerd font is preferred
 PADDINGS=4                     # All paddings use this value (icon, label, background)
 
-THEME="dark" # light|dark
+THEME="light" # light|dark
 AUTO_SWITCH_THEME=on
 LIGHT_START_TIME="06:00"
 LIGHT_END_TIME="15:00"
@@ -61,7 +61,7 @@ bar=(
     position=top
     topmost=window
     sticky=off
-    height=30
+    height=24
     color=$BAR_COLOR
     border_color=$BAR_BORDER_COLOR
     blur_radius=10
@@ -93,7 +93,7 @@ default=(
     popup.background.border_color=$POPUP_BORDER_COLOR
     popup.background.color=$POPUP_BACKGROUND_COLOR
 
-    background.height=30
+    background.height=24
     background.border_width=1
     background.corner_radius=5
 )
