@@ -6,7 +6,3 @@ vim.lsp.enable(servers)
 vim.lsp.config("bashls", {
   filetypes = { "sh", "bash", "zsh" },
 })
-
-vim.lsp.config("tsserver", {
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-})
