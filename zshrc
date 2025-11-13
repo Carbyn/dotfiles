@@ -100,6 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias saws="ssh -i ~/.ssh/carbyn@mac-studio.pem ec2-user@ec2-54-197-5-59.compute-1.amazonaws.com"
+alias ss3="aws s3 sync out/ s3://lustix-web --region us-east-1 --delete"
+
 alias vi="nvim"
 alias vim="nvim"
 alias bat="bat -p --theme OneHalfDark"
