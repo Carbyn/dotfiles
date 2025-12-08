@@ -101,7 +101,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias saws="ssh -i ~/.ssh/carbyn@mac-studio.pem ec2-user@ec2-54-197-5-59.compute-1.amazonaws.com"
+alias sawsip="ssh -i ~/.ssh/carbyn@mac-studio.pem ec2-user@54.197.5.59"
 alias ss3="aws s3 sync out/ s3://lustix-web --region us-east-1 --delete"
+alias scf='aws cloudfront create-invalidation --distribution-id E3TYSWA115NE9C --invalidation-batch "Paths={Quantity=1,Items=[\"/*\"]},CallerReference=$(date +%s)"'
+
+alias v2i="sh ~/workspace/sak/v2i.sh"
+alias v2w="sh ~/workspace/sak/v2w.sh"
 
 alias vi="nvim"
 alias vim="nvim"
@@ -114,6 +119,8 @@ alias jj="cd ~/workspace/jarvis/"
 alias js="cd ~/workspace/jarvis/src/"
 alias jd="cd ~/workspace/dotfiles/"
 alias jb="cd ~/workspace/xcode/QBar/"
+alias jlw="cd ~/workspace/lustix_web/"
+alias jls="cd ~/workspace/lustix_server/"
 
 alias kj="sh ~/workspace/jarvis/scripts/kill_main.sh"
 alias ko="sh ~/workspace/jarvis/scripts/kill_opend.sh"
