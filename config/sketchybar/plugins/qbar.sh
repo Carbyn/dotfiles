@@ -2,7 +2,7 @@
 
 source "$CONFIG_DIR/settings.sh"
 
-if [[ "$NAME" == "qbar_body" ]]; then
+if [[ "$NAME" == "qbar_body" || "$NAME" == qbar.popup.* ]]; then
     NAME="qbar"
 fi
 
@@ -123,11 +123,13 @@ refresh() {
 
 case "$SENDER" in
 "mouse.clicked")
-    refresh on
-    popup on
-    ;;
-"mouse.exited.global")
-    popup off
+    if sketchybar --query qbar | jq -e '.popup.items | length > 0' >/dev/null; then
+        popup off
+        sketchybar --remove '/qbar.popup.*/'
+    else
+        refresh on
+        popup on
+    fi
     ;;
 *)
     refresh off

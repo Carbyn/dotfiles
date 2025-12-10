@@ -15,8 +15,8 @@ qbar_body=(
 sketchybar \
     --add item qbar_body right \
     --set qbar_body "${qbar_body[@]}" \
-    --subscribe qbar_body mouse.clicked mouse.exited.global \
+    --subscribe qbar_body mouse.clicked \
     \
     --add item qbar right \
     --set qbar "${qbar[@]}" \
-    --subscribe qbar mouse.clicked mouse.exited.global
+    --subscribe qbar mouse.clicked
