@@ -8,7 +8,7 @@ local ui = require "ui"
 
 M.base46 = {
   theme = "nimbus",
-  transparency = false,
+  transparency = true,
   hl_add = {
     TabLineFill = ui.hl_groups.TabLineFill,
     NvimTreeHeader = ui.hl_groups.NvimTreeHeader,

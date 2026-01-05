@@ -1,18 +1,14 @@
 #!/bin/bash
 
-SOURCE=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID)
+INPUT_SOURCES=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources 2>/dev/null)
 
-case "$SOURCE" in
-'com.apple.keylayout.US' | 'com.apple.keylayout.ABC')
-    ICON=🇺🇸
-    ;;
-'com.apple.keylayout.PinyinKeyboard')
-    ICON=🇨🇳
-    ;;
-*)
-    echo "InputSource: $SOURCE not recognized. Add it in plugins/input.sh first."
-    ICON="Unknown"
-    ;;
-esac
+ICON="❓"
 
-sketchybar --set $NAME icon=$ICON
+if echo "$INPUT_SOURCES" | grep -Eq \
+    "com.tencent.inputmethod.wetype|com.apple.inputmethod.SCIM"; then
+    ICON="🇨🇳"
+elif echo "$INPUT_SOURCES" | grep -q '"KeyboardLayout Name" = "U.S."'; then
+    ICON="🇺🇸"
+fi
+
+sketchybar --set "$NAME" icon="$ICON"

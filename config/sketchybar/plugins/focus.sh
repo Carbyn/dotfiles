@@ -8,10 +8,10 @@ case "$SENDER" in
     sketchybar --set $NAME drawing=off
     ;;
 *)
-    FOCUS=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes")
+    FOCUS=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes" 2>/dev/null)
     if [[ $FOCUS == "1" ]]; then
         sleep 6 # Wait until the dimmed Focus icon disappears.
-        FOCUS=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes")
+        FOCUS=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes" 2>/dev/null)
         if [[ $FOCUS == "1" ]]; then
             sketchybar --set $NAME drawing=on
         else
