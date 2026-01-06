@@ -18,8 +18,8 @@ local chineseAppList = {
 
 local inputMethod = {
 	english = "com.apple.keylayout.US",
-	-- chinese = "com.apple.inputmethod.SCIM.ITABC",
-	chinese = "com.tencent.inputmethod.wetype.pinyin",
+	chinese = "com.apple.inputmethod.SCIM.ITABC",
+	-- chinese = "com.tencent.inputmethod.wetype.pinyin",
 }
 
 local function switchInputTo(sourceId)
