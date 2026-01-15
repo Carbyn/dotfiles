@@ -129,6 +129,6 @@ alias kq="sh ~/workspace/jarvis/scripts/kill_qbar.sh"
 alias jlog="tail -f ~/workspace/jarvis/logs/main.log"
 
 alias csvlook="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py"
-alias jt="python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_2025.csv; python3 ~/workspace/jarvis/scripts/stat_trade.py ~/workspace/jarvis/data/trade_2025.csv"
+alias jt="awk 'FNR==1 && NR!=1{next} {print}' ~/workspace/jarvis/data/trade_20*.csv > trade_all.csv; python3 ~/workspace/jarvis/scripts/colorcsv/colorcsv.py ~/workspace/jarvis/data/trade_all.csv; python3 ~/workspace/jarvis/scripts/stat_trade.py ~/workspace/jarvis/data/trade_all.csv"
 
 export EDITOR="nvim"
