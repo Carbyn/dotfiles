@@ -3,5 +3,5 @@ hs.ipc.cliInstall()
 
 require("hotkey")
 require("input")
-require("vpn")
+-- require("vpn")
 require("window")
