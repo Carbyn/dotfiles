@@ -5,7 +5,7 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 FONT="JetBrainsMono Nerd Font" # Nerd font is preferred
 PADDINGS=4                     # All paddings use this value (icon, label, background)
 
-THEME="dark" # light|dark
+THEME="light" # light|dark
 AUTO_SWITCH_THEME=on
 LIGHT_START_TIME="06:00"
 LIGHT_END_TIME="15:00"
@@ -13,7 +13,7 @@ LIGHT_END_TIME="15:00"
 LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
-VPN_NAME="Shadowrocket"
+VPN_NAME="Apps Connect"
 
 # Ensure that the query and srcid parameters lead to a valid, existing page.
 # For example: https://weathernew.pae.baidu.com/weathernew/pc?query=杭州西湖天气&srcid=4982&forecast=long_day_forecast
