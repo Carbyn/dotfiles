@@ -13,7 +13,7 @@ LIGHT_END_TIME="15:00"
 LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
 DARK_WALLPAPER=$(realpath ~/Pictures/bg/dark.jpg)
 
-VPN_NAME="Apps Connect"
+VPN_NAME="Shadowrocket"
 
 # Ensure that the query and srcid parameters lead to a valid, existing page.
 # For example: https://weathernew.pae.baidu.com/weathernew/pc?query=杭州西湖天气&srcid=4982&forecast=long_day_forecast

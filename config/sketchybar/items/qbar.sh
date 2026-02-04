@@ -3,7 +3,7 @@
 qbar=(
     icon=􀴛
     label.padding_right=1
-    update_freq=2
+    update_freq=3
     script="$PLUGIN_DIR/qbar.sh"
 )
 
