@@ -102,6 +102,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+disabled = true
 
 [ocaml]
 symbol = " "
