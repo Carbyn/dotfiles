@@ -21,10 +21,10 @@ end)
 
 -- App Launcher
 hs.hotkey.bind({ "ctrl" }, "space", function()
-	hs.application.launchOrFocus("ChatGPT")
+	hs.application.launchOrFocus("Claude")
 end)
-hs.hotkey.bind({ "ctrl", "shift" }, "space", function()
-	hs.application.launchOrFocus("Gemini")
+hs.hotkey.bind({ "alt" }, "space", function()
+	hs.application.launchOrFocus("ChatGPT")
 end)
 hs.hotkey.bind({ "cmd", "ctrl" }, "C", function()
 	hs.application.launchOrFocus("ChatGPT")
