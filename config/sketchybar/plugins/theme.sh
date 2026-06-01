@@ -2,6 +2,11 @@
 
 source "$CONFIG_DIR/settings.sh"
 
+set_macos_dark_mode() {
+    DARK_MODE=$1
+    osascript -e "tell application \"System Events\" to tell appearance preferences to set dark mode to $DARK_MODE"
+}
+
 set_wallpaper() {
     NEW_WALLPAPER=$1
     if [[ -f "$NEW_WALLPAPER" ]]; then
@@ -13,15 +18,18 @@ set_wallpaper() {
 
 switch_theme() {
     if is_dark_mode; then
+        MACOS_DARK_MODE="false"
         NEW_THEME="light"
         NEW_WALLPAPER=$LIGHT_WALLPAPER
     else
+        MACOS_DARK_MODE="true"
         NEW_THEME="dark"
         NEW_WALLPAPER=$DARK_WALLPAPER
     fi
 
     sed -i '' "s/^THEME=\"$THEME\"/THEME=\"$NEW_THEME\"/" $CONFIG_DIR/settings.sh
     # sketchybar --reload
+    set_macos_dark_mode $MACOS_DARK_MODE
     set_wallpaper $NEW_WALLPAPER
 }
 
@@ -42,8 +50,10 @@ is_time_between() {
 }
 
 if [[ "$THEME" == "light" ]]; then
+    set_macos_dark_mode "false"
     set_wallpaper $LIGHT_WALLPAPER
 else
+    set_macos_dark_mode "true"
     set_wallpaper $DARK_WALLPAPER
 fi
 

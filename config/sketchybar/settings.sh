@@ -5,9 +5,9 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 FONT="JetBrainsMono Nerd Font" # Nerd font is preferred
 PADDINGS=4                     # All paddings use this value (icon, label, background)
 
-THEME="dark" # light|dark
+THEME="light" # light|dark
 AUTO_SWITCH_THEME=on
-LIGHT_START_TIME="06:00"
+LIGHT_START_TIME="08:00"
 LIGHT_END_TIME="18:00"
 
 LIGHT_WALLPAPER=$(realpath ~/Pictures/bg/light.jpg)
