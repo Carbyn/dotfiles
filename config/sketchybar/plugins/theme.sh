@@ -3,6 +3,8 @@
 source "$CONFIG_DIR/settings.sh"
 
 set_macos_dark_mode() {
+    # disabled
+    return
     DARK_MODE=$1
     osascript -e "tell application \"System Events\" to tell appearance preferences to set dark mode to $DARK_MODE"
 }
