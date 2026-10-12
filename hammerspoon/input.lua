@@ -3,6 +3,7 @@ local M = {}
 local chineseAppList = {
 	"ChatGPT",
 	"Claude",
+	"Discord",
 	"Gemini",
 	"iPhone Mirroring",
 	"Messages",
@@ -11,6 +12,7 @@ local chineseAppList = {
 	"QQ",
 	"Safari",
 	"WeChat",
+	"X",
 	"豆包",
 	"抖音",
 	"富途牛牛",
