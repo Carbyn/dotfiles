@@ -1,24 +1,27 @@
 #!/bin/bash
 
-case "$SENDER" in
-"focus_enabled")
-    sketchybar --set $NAME drawing=on
+# need full disk access
+FILE="$HOME/Library/DoNotDisturb/DB/Assertions.json"
+
+if [[ ! -r "$FILE" ]]; then
+    exit 0
+fi
+
+STATE=$(/usr/bin/jq -r '
+    [.data[]?.storeAssertionRecords[]?] | length
+' "$FILE" 2>/dev/null)
+
+echo $STATE
+
+case "$STATE" in
+'' | *[!0-9]*)
+    # Invalid JSON or unexpected data: preserve current state.
+    exit 0
     ;;
-"focus_disabled")
-    sketchybar --set $NAME drawing=off
+0)
+    sketchybar --set "$NAME" drawing=off
     ;;
 *)
-    FOCUS=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes" 2>/dev/null)
-    if [[ $FOCUS == "1" ]]; then
-        sleep 6 # Wait until the dimmed Focus icon disappears.
-        FOCUS=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes" 2>/dev/null)
-        if [[ $FOCUS == "1" ]]; then
-            sketchybar --set $NAME drawing=on
-        else
-            sketchybar --set $NAME drawing=off
-        fi
-    else
-        sketchybar --set $NAME drawing=off
-    fi
+    sketchybar --set "$NAME" drawing=on
     ;;
 esac
