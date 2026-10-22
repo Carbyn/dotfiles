@@ -11,8 +11,6 @@ STATE=$(/usr/bin/jq -r '
     [.data[]?.storeAssertionRecords[]?] | length
 ' "$FILE" 2>/dev/null)
 
-echo $STATE
-
 case "$STATE" in
 '' | *[!0-9]*)
     # Invalid JSON or unexpected data: preserve current state.
